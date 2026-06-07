@@ -15,7 +15,7 @@ const HEAD = (title, desc) => `<!DOCTYPE html>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Kadae S.A. | ${title}</title>
-<meta name="description" content="${desc}"/>
+<meta name="description" content="${desc.replace(/"/g, '&quot;')}"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700;800;900&family=Public+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
@@ -263,7 +263,7 @@ function pQtyChange(d){
   i.value = Math.max(1, Math.min(9999, parseInt(i.value||1)+d));
 }
 </script>
-<script src="../cart.js"></script>`;
+<script type="module" src="../cart.js"></script>`;
 
 // ══════════════════════════════════════════════════════════════
 //  TRANSMISION PAGE GENERATOR
@@ -292,7 +292,7 @@ ${NAV}
     <!-- IMAGE -->
     <div>
       <div class="pimg-wrap">
-        <img class="pimg" id="pProductImg" src="${p.image}" alt="${p.name}" loading="eager"/>
+        <img class="pimg" id="pProductImg" src="${p.image}" alt="${p.name.replace(/"/g, '&quot;')}" loading="eager"/>
         <span class="pimg-badge">${p.category}</span>
       </div>
     </div>
@@ -362,7 +362,7 @@ ${SCRIPTS}
 // ══════════════════════════════════════════════════════════════
 function genPlastico(cat) {
   const imgBlock = cat.image
-    ? `<img class="pimg" id="pProductImg" src="${cat.image}" alt="${cat.name}" loading="eager"/>`
+    ? `<img class="pimg" id="pProductImg" src="${cat.image}" alt="${cat.name.replace(/"/g, '&quot;')}" loading="eager"/>`
     : `<div class="pimg-placeholder" id="pProductImg">📦</div>`;
 
   const countText = cat.count > 0 ? `${cat.count}` : '—';
