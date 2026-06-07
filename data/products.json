@@ -1,0 +1,383 @@
+{
+  "transmisiones": [
+    {
+      "slug": "cruceta-k514-rodillos",
+      "name": "Cruceta K514 – Con Rodillos",
+      "category": "Crucetas",
+      "ref": "34096",
+      "description": "Cruceta serie K514 con rodillos para transmisiones cardánicas de maquinaria agrícola. Fabricación nacional con materiales de alta resistencia mecánica.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34096.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K514",
+        "Tipo": "Con Rodillos",
+        "Aplicación": "Maquinaria Agrícola",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "cruceta-k518-rodillos",
+      "name": "Cruceta K518 – Con Rodillos",
+      "category": "Crucetas",
+      "ref": "34095",
+      "description": "Cruceta serie K518 con rodillos para transmisiones cardánicas industriales. Mayor capacidad de carga para aplicaciones exigentes.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34095.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K518",
+        "Tipo": "Con Rodillos",
+        "Aplicación": "Industrial",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "cruceta-k521-rodillos",
+      "name": "Cruceta K521 – Con Rodillos",
+      "category": "Crucetas",
+      "ref": "34094",
+      "description": "Cruceta serie K521 con rodillos para transmisiones de alto torque. Diseñada para condiciones de trabajo severas.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34094.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K521",
+        "Tipo": "Con Rodillos",
+        "Aplicación": "Alto Torque",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "cruceta-k526-rodillos",
+      "name": "Cruceta K526 – Con Rodillos",
+      "category": "Crucetas",
+      "ref": "34093",
+      "description": "Cruceta serie K526 con rodillos para transmisiones cardánicas de servicio pesado. La serie más robusta del catálogo.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34093.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K526",
+        "Tipo": "Con Rodillos",
+        "Aplicación": "Servicio Pesado",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "cruceta-k514-bujes",
+      "name": "Cruceta K514 – Con Bujes",
+      "category": "Crucetas",
+      "ref": "34224",
+      "description": "Cruceta serie K514 con bujes para transmisiones cardánicas. Alternativa económica con excelente rendimiento.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34224.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K514",
+        "Tipo": "Con Bujes",
+        "Aplicación": "General",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "cruceta-cr1002-rodillos",
+      "name": "Cruceta CR 1002 – Con Rodillos",
+      "category": "Crucetas",
+      "ref": "34977",
+      "description": "Cruceta CR 1002 con rodillos para aplicaciones universales. Compatible con múltiples marcas de maquinaria.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34977.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "CR 1002",
+        "Tipo": "Con Rodillos",
+        "Aplicación": "Universal",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "horquilla-k518-trilobular",
+      "name": "Horquilla K518 Trilobular Ext.",
+      "category": "Horquillas",
+      "ref": "34074",
+      "description": "Horquilla K518 para perfil trilobular exterior. Componente esencial de transmisión cardánica con ajuste preciso.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34074.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K518",
+        "Perfil": "Trilobular Exterior",
+        "Aplicación": "Transmisión Cardánica",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "horquilla-k521-ovoidal",
+      "name": "Horquilla K521 Ovoidal Ext.",
+      "category": "Horquillas",
+      "ref": "34067",
+      "description": "Horquilla K521 para perfil ovoidal exterior. Alta resistencia mecánica para aplicaciones industriales y agrícolas.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34067.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K521",
+        "Perfil": "Ovoidal Exterior",
+        "Aplicación": "Industrial / Agrícola",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "horquilla-seguro-bolita",
+      "name": "Horquilla Con Seguro a Bolita",
+      "category": "Horquillas",
+      "ref": "HORQ-SAB",
+      "description": "Horquilla con sistema de seguro a bolita para conexión rápida. Permite montaje y desmontaje ágil sin herramientas especiales.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/HORQUILLA-CON-SEGURO-A-BOLITA.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Tipo": "Con Seguro a Bolita",
+        "Conexión": "Rápida",
+        "Aplicación": "Universal",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "manchon-doble-bulon-z6",
+      "name": "Manchon Doble Bulon Z6 – 1 3/8\"",
+      "category": "Manchones",
+      "ref": "34217",
+      "description": "Manchón doble bulón con estriado Z6 de 1 3/8\". Conexión estándar para barras cardánicas agrícolas e industriales.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34217.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Estriado": "Z6",
+        "Medida": "1 3/8\"",
+        "Tipo": "Doble Bulón",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "manchon-doble-bulon-z21",
+      "name": "Manchon Doble Bulon Z21 – 1 3/8\"",
+      "category": "Manchones",
+      "ref": "34287",
+      "description": "Manchón doble bulón con estriado Z21 de 1 3/8\" para barras cardánicas. Compatible con estriados Z21 estándar.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34287.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Estriado": "Z21",
+        "Medida": "1 3/8\"",
+        "Tipo": "Doble Bulón",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "manchon-mdb-z6-pe-z6",
+      "name": "Manchon MDB Z6 c/PE Z6 1 3/8\"",
+      "category": "Manchones",
+      "ref": "34238",
+      "description": "Manchón doble bulón Z6 1 3/8\" con punta estriada Z6 1 3/8\". Pieza de conexión versátil para transmisiones.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34238.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Estriado": "Z6",
+        "Medida": "1 3/8\"",
+        "Tipo": "MDB con Punta Estriada",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "tubo-trilobular-k518",
+      "name": "Tubo Trilobular K518 Exterior",
+      "category": "Tubos",
+      "ref": "34105",
+      "description": "Tubo de perfil trilobular exterior serie K518 para barras cardánicas telescópicas. Permite ajuste longitudinal preciso.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34105.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K518",
+        "Perfil": "Trilobular Exterior",
+        "Aplicación": "Barras Telescópicas",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "tubo-ovoidal-k526",
+      "name": "Tubo Ovoidal K526 Exterior",
+      "category": "Tubos",
+      "ref": "34097",
+      "description": "Tubo de perfil ovoidal exterior serie K526 para transmisiones cardánicas. Perfil de alta resistencia a la torsión.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34097.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K526",
+        "Perfil": "Ovoidal Exterior",
+        "Aplicación": "Transmisión Cardánica",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "tubo-cuadrolobular",
+      "name": "Tubo Cuadrolobular Exterior",
+      "category": "Tubos",
+      "ref": "39182",
+      "description": "Tubo de perfil cuadrolobular exterior para transmisiones cardánicas. Geometría que maximiza la transmisión de torque.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/39182.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Perfil": "Cuadrolobular Exterior",
+        "Aplicación": "Transmisión Cardánica",
+        "Característica": "Alto Torque",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "buje-brochado-z21",
+      "name": "Buje Brochado Z21 1 3/8\"",
+      "category": "Bujes",
+      "ref": "34213",
+      "description": "Buje brochado con estriado Z21 de 1 3/8\", DE=62,3 – L=82,9. Pieza de precisión para acoplamientos cardánicos.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34213.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Estriado": "Z21 – 1 3/8\"",
+        "DE": "62,3 mm",
+        "Largo": "82,9 mm",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "buje-seguro-bolitas-z6",
+      "name": "Buje c/Seguro a Bolitas Z6 1 3/8\"",
+      "category": "Bujes",
+      "ref": "39084",
+      "description": "Buje con sistema de seguro a bolitas, estriado Z6 de 1 3/8\". Sistema de retención rápida para montaje en campo.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/39084.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Estriado": "Z6 – 1 3/8\"",
+        "Seguro": "Bolitas",
+        "Aplicación": "Montaje Rápido",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "buje-engranaje",
+      "name": "Buje Para Engranaje DE=42,6",
+      "category": "Bujes",
+      "ref": "34275",
+      "description": "Buje para engranaje DE=42,6 DI=20,1 L=45 CH 6 x 3 ENG=35. Pieza de precisión para cajas de transmisión.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34275.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "DE": "42,6 mm",
+        "DI": "20,1 mm",
+        "Largo": "45 mm",
+        "Chavetero": "6 x 3",
+        "Engranaje": "35"
+      }
+    },
+    {
+      "slug": "limitador-2-bulones-k518",
+      "name": "Limitador 2 Bulones K518 SAB Z6",
+      "category": "Limitadores y Zafes",
+      "ref": "34027",
+      "description": "Limitador de torque de 2 bulones K518 con seguro a bolitas Z6 de 1 3/8\". Protege la transmisión ante sobrecargas.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34027.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Serie": "K518",
+        "Bulones": "2",
+        "Estriado": "Z6 – 1 3/8\"",
+        "Seguro": "Bolitas",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "limitador",
+      "name": "Limitador",
+      "category": "Limitadores y Zafes",
+      "ref": "LIMIT",
+      "description": "Limitador de torque para protección de transmisiones cardánicas. Dispositivo de seguridad indispensable para maquinaria agrícola.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/LIMITADOR.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Tipo": "Limitador de Torque",
+        "Aplicación": "Protección de Transmisiones",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "zafe-8r-2f-mdb-z6",
+      "name": "Zafe 8R 2F MDB Z6 – Horq. K518",
+      "category": "Limitadores y Zafes",
+      "ref": "34177",
+      "description": "Zafe de seguridad 8R 2F con manchón doble bulón Z6-1 3/8\" y horquilla K518. Sistema completo de protección contra sobrecargas.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34177.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Modelo": "8R 2F",
+        "Manchón": "MDB Z6 – 1 3/8\"",
+        "Horquilla": "K518",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "barra-con-protector",
+      "name": "Barra Con Protector",
+      "category": "Accesorios",
+      "ref": "BARRA-PROT",
+      "description": "Barra cardánica completa con protección de seguridad integrada. Incluye blindaje plástico para cumplir normativas de seguridad.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/BARRA-CON-PROTECTOR.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Tipo": "Barra Completa",
+        "Protector": "Integrado",
+        "Aplicación": "Normas de Seguridad",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "blindaje-modelo-nuevo",
+      "name": "Blindaje Modelo Nuevo K514-K526",
+      "category": "Accesorios",
+      "ref": "BLIND-MN",
+      "description": "Blindaje modelo nuevo para barra cardánica K514-K518-K521-K526. Protección plástica de alta resistencia al impacto.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/07/BLINDAJE-MODELO-NUEVO.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Compatible": "K514 / K518 / K521 / K526",
+        "Material": "Plástico Alta Resistencia",
+        "Tipo": "Blindaje de Seguridad",
+        "Fabricación": "Nacional"
+      }
+    },
+    {
+      "slug": "adaptador-buje-32",
+      "name": "Adaptador – Buje Ø32 Z6 1 3/8\"",
+      "category": "Accesorios",
+      "ref": "34812",
+      "description": "Adaptador – Buje Ø32 CH 7 x 7 x 83 con punta estriada Z6 de 1 3/8\". Permite adaptar diferentes estriados en la misma transmisión.",
+      "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/34812.webp?resize=600%2C600&ssl=1",
+      "specs": {
+        "Diámetro": "Ø32 mm",
+        "Chavetero": "7 x 7 x 83",
+        "Estriado": "Z6 – 1 3/8\"",
+        "Fabricación": "Nacional"
+      }
+    }
+  ],
+  "plasticos": [
+    { "slug": "accesorios-chimangos", "name": "Accesorios para Chimangos", "count": 51, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/7.jpg?resize=600%2C600&ssl=1", "description": "Línea completa de accesorios plásticos para chimangos. 51 productos incluyendo bocas de carga, caños telescópicos, tapas y conexiones." },
+    { "slug": "accesorios-piletas", "name": "Accesorios para Piletas", "count": 3, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/34.jpg?resize=600%2C600&ssl=1", "description": "Accesorios plásticos para piletas de natación. Skimmers, boquillas de retorno y accesorios de limpieza fabricados por inyección." },
+    { "slug": "acoples-flexibles", "name": "Acoples Flexibles", "count": 3, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/33.jpg?resize=600%2C600&ssl=1", "description": "Acoples flexibles plásticos para conexiones industriales. Absorben vibraciones y compensan desalineaciones en sistemas de transmisión." },
+    { "slug": "arandelas", "name": "Arandelas", "count": 1, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/30.jpg?resize=600%2C600&ssl=1", "description": "Arandelas plásticas de uso industrial. Resistentes a la corrosión y aptas para ambientes agresivos." },
+    { "slug": "banos-quimicos", "name": "Baños Químicos", "count": 6, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/28.jpg?resize=600%2C600&ssl=1", "description": "Baños químicos portátiles fabricados por rotomoldeo. 6 modelos para eventos, obras en construcción y uso rural." },
+    { "slug": "boquillas", "name": "Boquillas", "count": 13, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/6.jpg?resize=600%2C600&ssl=1", "description": "Boquillas plásticas para pulverización agrícola. 13 modelos con diferentes patrones de aspersión y caudales." },
+    { "slug": "canos-de-bajada", "name": "Caños de Bajada", "count": 21, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/9.jpg?resize=600%2C600&ssl=1", "description": "Caños de bajada plásticos para sembradoras. 21 modelos compatibles con las principales marcas del mercado." },
+    { "slug": "caja-velocidad", "name": "Caja de Velocidad", "count": 1, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/5.jpg?resize=600%2C600&ssl=1", "description": "Caja de velocidad con componentes plásticos de ingeniería. Diseño optimizado para maquinaria agrícola." },
+    { "slug": "cajones", "name": "Cajones", "count": 17, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/22.jpg?resize=600%2C600&ssl=1", "description": "Cajones plásticos industriales fabricados por inyección. 17 modelos para logística, almacenamiento y transporte." },
+    { "slug": "cangilones", "name": "Cangilones", "count": 22, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/18.jpg?resize=600%2C600&ssl=1", "description": "Cangilones plásticos para elevadores de granos. 22 modelos en diferentes capacidades y materiales." },
+    { "slug": "comederos", "name": "Comederos", "count": 11, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/19.jpg?resize=600%2C600&ssl=1", "description": "Comederos plásticos para ganadería. 11 modelos resistentes a la intemperie y al impacto animal." },
+    { "slug": "conos-desparramadores", "name": "Conos Desparramadores", "count": 5, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/3.jpg?resize=600%2C600&ssl=1", "description": "Conos desparramadores plásticos para fertilizadoras y esparcidoras. 5 modelos con diferentes patrones de distribución." },
+    { "slug": "contenedores", "name": "Contenedores", "count": 33, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/23.jpg?resize=600%2C600&ssl=1", "description": "Contenedores plásticos industriales. 33 modelos para residuos, logística y almacenamiento, desde 120 hasta 1100 litros." },
+    { "slug": "cosechadoras", "name": "Cosechadoras", "count": 60, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/2017-1.jpg?resize=600%2C600&ssl=1", "description": "Repuestos plásticos para cosechadoras. 60 productos incluyendo guardas, deflectores, bandejas y componentes de desgaste." },
+    { "slug": "empunaduras", "name": "Empuñaduras", "count": 1, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/20.jpg?resize=600%2C600&ssl=1", "description": "Empuñaduras plásticas ergonómicas para comandos de maquinaria agrícola. Diseño antideslizante y resistente a aceites y grasas." },
+    { "slug": "fertilizacion", "name": "Fertilización", "count": 22, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/8.jpg?resize=600%2C600&ssl=1", "description": "Componentes plásticos para equipos de fertilización. 22 productos incluyendo distribuidores, dosificadores y caños de conducción." },
+    { "slug": "filtros", "name": "Filtros", "count": 15, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/27.jpg?resize=600%2C600&ssl=1", "description": "Filtros plásticos industriales y agrícolas. 15 modelos para agua, combustible y productos químicos." },
+    { "slug": "filtros-de-linea", "name": "Filtros de Línea", "count": 6, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/12.jpg?resize=600%2C600&ssl=1", "description": "Filtros de línea plásticos para sistemas de riego y pulverización. 6 modelos con diferentes mallas de retención." },
+    { "slug": "frigorificos", "name": "Frigoríficos", "count": 20, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/29.jpg?resize=600%2C600&ssl=1", "description": "Productos plásticos para la industria frigorífica. 20 artículos incluyendo bandejas, separadores y accesorios de cadena de frío." },
+    { "slug": "guardabarros", "name": "Guardabarros", "count": 12, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/1.jpg?resize=600%2C600&ssl=1", "description": "Guardabarros plásticos para maquinaria agrícola y vehículos. 12 modelos en diferentes tamaños y formas." },
+    { "slug": "iluminacion", "name": "Iluminación", "count": 23, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/16.jpg?resize=600%2C600&ssl=1", "description": "Carcasas y accesorios plásticos para iluminación. 23 productos para faroles, balizas y señalización de maquinaria." },
+    { "slug": "karting", "name": "Karting", "count": 5, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/31.jpg?resize=600%2C600&ssl=1", "description": "Componentes plásticos para karting. 5 productos incluyendo carrocerías, pontones y defensas." },
+    { "slug": "mangueras-tubos", "name": "Mangueras – Tubos", "count": 11, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/36.jpg?resize=600%2C600&ssl=1", "description": "Mangueras y tubos plásticos flexibles. 11 modelos para conducción de fluidos, aire y granos." },
+    { "slug": "mezcladores", "name": "Mezcladores", "count": 2, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/24.jpg?resize=600%2C600&ssl=1", "description": "Mezcladores plásticos industriales para preparación de soluciones químicas y agroquímicos." },
+    { "slug": "moldes-quesos", "name": "Moldes para Quesos", "count": 0, "image": null, "description": "Moldes plásticos para la industria quesera. Fabricados en materiales aptos para contacto alimentario." },
+    { "slug": "pantallas-protectoras", "name": "Pantallas Protectoras", "count": 3, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/26.jpg?resize=600%2C600&ssl=1", "description": "Pantallas protectoras plásticas para maquinaria. 3 modelos para protección de operarios contra proyecciones." },
+    { "slug": "porta-manuales", "name": "Porta Manuales", "count": 2, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/21.jpg?resize=600%2C600&ssl=1", "description": "Porta manuales plásticos para maquinaria y vehículos. Protegen la documentación técnica de la suciedad y humedad." },
+    { "slug": "pallets", "name": "Pallets", "count": 0, "image": null, "description": "Pallets plásticos industriales fabricados por inyección. Higiénicos, resistentes y reutilizables." },
+    { "slug": "prensa-canos", "name": "Prensa Caños", "count": 20, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/13.jpg?resize=600%2C600&ssl=1", "description": "Prensa caños plásticos para fijación de conductos. 20 modelos para diferentes diámetros de caño." },
+    { "slug": "puas", "name": "Púas", "count": 18, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/2.jpg?resize=600%2C600&ssl=1", "description": "Púas plásticas para recolección de granos. 18 modelos flexibles y resistentes para cabezales de cosechadora." },
+    { "slug": "regatones", "name": "Regatones", "count": 13, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/14.jpg?resize=600%2C600&ssl=1", "description": "Regatones plásticos para terminación de tubos y caños. 13 modelos en diferentes diámetros." },
+    { "slug": "rejillas", "name": "Rejillas", "count": 3, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/06/Cat-Rejillas.jpg?resize=600%2C600&ssl=1", "description": "Rejillas plásticas para ventilación y drenaje industrial. 3 modelos en diferentes medidas." },
+    { "slug": "sembradoras", "name": "Sembradoras", "count": 222, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/10.jpg?resize=600%2C600&ssl=1", "description": "Repuestos plásticos para sembradoras. Catálogo con 222 productos: dosificadores, placas, cuerpos de siembra, distribuidores y más." },
+    { "slug": "soportes", "name": "Soportes", "count": 12, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2022/02/10081.jpg?resize=600%2C600&ssl=1", "description": "Soportes plásticos industriales. 12 modelos para fijación de componentes en maquinaria agrícola." },
+    { "slug": "tanques", "name": "Tanques", "count": 109, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/32.jpg?resize=600%2C600&ssl=1", "description": "Tanques plásticos fabricados por rotomoldeo. 109 modelos desde 100 hasta 25.000 litros para agua, agroquímicos y combustible." },
+    { "slug": "tapas-mazas", "name": "Tapas para Mazas", "count": 46, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/11.jpg?resize=600%2C600&ssl=1", "description": "Tapas plásticas para mazas de ruedas. 46 modelos compatibles con las principales marcas de maquinaria." },
+    { "slug": "tapas-tanques", "name": "Tapas para Tanques", "count": 16, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/25.jpg?resize=600%2C600&ssl=1", "description": "Tapas plásticas para tanques. 16 modelos con diferentes diámetros y sistemas de cierre." },
+    { "slug": "tolvas", "name": "Tolvas", "count": 17, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/5378ok.jpg?resize=600%2C600&ssl=1", "description": "Tolvas plásticas para dosificación y almacenamiento de granos. 17 modelos en diferentes capacidades." },
+    { "slug": "varios", "name": "Varios", "count": 115, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2024/07/Varios-Kadae.webp?resize=600%2C600&ssl=1", "description": "Productos plásticos varios. 115 artículos de uso general para la industria, el agro y otras aplicaciones." },
+    { "slug": "ventiladores", "name": "Ventiladores", "count": 16, "image": "https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/20006.jpg?resize=600%2C600&ssl=1", "description": "Aspas y componentes plásticos para ventiladores. 16 modelos para radiadores, condensadores y ventilación industrial." }
+  ]
+}

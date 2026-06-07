@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catálogo Industrial | Kadae S.A. — Transmisiones y Plásticos</title>
+<meta name="description" content="Catálogo completo de transmisiones cardánicas, repuestos agrícolas y productos plásticos por inyección y rotomoldeo. Kadae S.A., Las Parejas, Santa Fe."/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700;800;900&family=Public+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#725c00","primary-container":"#ffd100","on-primary-fixed":"#231b00","secondary":"#5e5e5e","outline":"#7f765f","outline-variant":"#d1c6ab","surface":"#f9f9f9","on-surface":"#1a1c1c","surface-container":"#eeeeee","surface-container-low":"#f3f3f3"},fontFamily:{headline:["Work Sans"],body:["Public Sans"],label:["Space Grotesk"]}}}}
+</script>
+<style>
+*{box-sizing:border-box;}
+body{font-family:'Public Sans',sans-serif;background:#0d1117;color:#e2e8f0;margin:0;}
+h1,h2,h3,h4{font-family:'Work Sans',sans-serif;}
+.sg{font-family:'Space Grotesk',sans-serif;}
+
+/* ====== NAVBAR ====== */
+.nav{position:sticky;top:0;z-index:200;background:rgba(13,17,23,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,209,0,0.12);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2rem;max-width:1600px;margin:0 auto;gap:1rem;}
+.nav-logo{font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.35rem;color:#FFD100;text-decoration:none;text-transform:uppercase;letter-spacing:-0.02em;flex-shrink:0;transition:opacity .2s;}
+.nav-logo:hover{opacity:.8;}
+.nav-links{display:flex;gap:2.25rem;align-items:center;}
+.nav-link{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.14em;color:#64748b;text-decoration:none;transition:color .2s;position:relative;padding-bottom:2px;}
+.nav-link:hover{color:#cbd5e1;}
+.nav-link.active{color:#fff;}
+.nav-link.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:#FFD100;border-radius:1px;}
+.nav-right{display:flex;align-items:center;gap:.75rem;flex-shrink:0;}
+.nav-cta{background:#FFD100;color:#0d1117;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;padding:.6rem 1.3rem;text-decoration:none;transition:all .2s;white-space:nowrap;}
+.nav-cta:hover{background:#fff;}
+#mobToggle{display:none;background:none;border:none;cursor:pointer;padding:.25rem;flex-direction:column;gap:5px;}
+#mobToggle span{display:block;width:22px;height:2px;background:#fff;transition:all .3s;border-radius:1px;}
+#mobToggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+#mobToggle.open span:nth-child(2){opacity:0;}
+#mobToggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+#mobMenu{max-height:0;overflow:hidden;transition:max-height .4s ease;background:#0d1117;border-top:1px solid rgba(255,209,0,.1);}
+#mobMenu.open{max-height:420px;}
+.mob-link{display:block;padding:.8rem 2rem;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;color:#64748b;text-decoration:none;transition:color .2s;}
+.mob-link:hover,.mob-link.active{color:#FFD100;}
+.mob-cta-wrap{padding:.75rem 2rem 1.5rem;}
+.mob-cta{display:block;background:#FFD100;color:#0d1117;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;padding:.85rem;text-align:center;text-decoration:none;}
+@media(max-width:768px){
+  #mobToggle{display:flex;}
+  .nav-links,.nav-cta{display:none!important;}
+  .nav-inner{padding:1rem 1.25rem;}
+}
+
+/* ====== CART BUTTON ====== */
+.cart-btn{position:relative;width:2.4rem;height:2.4rem;background:rgba(255,209,0,.08);border:1px solid rgba(255,209,0,.2);border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#FFD100;transition:all .2s;flex-shrink:0;}
+.cart-btn:hover{background:rgba(255,209,0,.18);border-color:rgba(255,209,0,.4);}
+.cart-badge{position:absolute;top:-6px;right:-6px;background:#FFD100;color:#0d1117;border-radius:50%;width:18px;height:18px;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:.58rem;display:none;align-items:center;justify-content:center;animation:pop .25s ease;}
+.cart-badge.show{display:flex;}
+@keyframes pop{0%{transform:scale(.6);}60%{transform:scale(1.3);}100%{transform:scale(1);}}
+
+/* ====== HERO ====== */
+.hero{background:linear-gradient(135deg,#0d1117 0%,#0f172a 50%,#1a0f00 100%);border-bottom:1px solid rgba(255,209,0,.08);padding:5rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(255,209,0,.06) 0%,transparent 60%);pointer-events:none;}
+.hero-inner{max-width:1600px;margin:0 auto;position:relative;}
+.hero-eyebrow{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:.3em;color:#FFD100;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem;}
+.hero-eyebrow::before{content:'';display:block;width:2rem;height:2px;background:#FFD100;}
+.hero-title{font-weight:900;font-size:clamp(3rem,8vw,7rem);line-height:.88;text-transform:uppercase;letter-spacing:-.025em;color:#fff;margin:0 0 1.5rem;}
+.hero-title span{color:#FFD100;}
+.hero-sub{max-width:520px;color:#64748b;font-size:1rem;line-height:1.65;border-left:3px solid rgba(255,209,0,.4);padding-left:1.25rem;margin-bottom:2.5rem;}
+.hero-stats{display:flex;flex-wrap:wrap;gap:2.5rem;}
+.stat-val{font-family:'Work Sans',sans-serif;font-weight:900;font-size:2rem;color:#FFD100;line-height:1;}
+.stat-lbl{font-family:'Space Grotesk',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;color:#475569;margin-top:.25rem;}
+
+/* ====== CATALOG AREA ====== */
+.catalog{max-width:1600px;margin:0 auto;padding:3rem 2rem 5rem;}
+@media(max-width:640px){.catalog{padding:2rem 1rem 4rem;}}
+
+/* ====== TABS ====== */
+.tabs-bar{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:2.5rem;}
+.tab-pill{background:none;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:#475569;padding:.9rem 2rem;display:flex;align-items:center;gap:.5rem;position:relative;transition:color .2s;}
+.tab-pill::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:transparent;transition:background .25s;}
+.tab-pill.active{color:#FFD100;}
+.tab-pill.active::after{background:#FFD100;}
+.tab-pill:hover{color:#cbd5e1;}
+.tab-pill .tab-count{background:rgba(255,209,0,.12);color:#FFD100;border-radius:20px;padding:.1rem .5rem;font-size:.6rem;}
+
+/* ====== SEARCH + FILTERS ====== */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-bottom:2rem;}
+.search-wrap{position:relative;flex:1;min-width:220px;max-width:380px;}
+.search-wrap .material-symbols-outlined{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);color:#475569;font-size:1.1rem;pointer-events:none;}
+#searchInput{width:100%;background:#161d2e;border:1px solid rgba(255,255,255,.08);color:#e2e8f0;font-family:'Public Sans',sans-serif;font-size:.88rem;padding:.7rem 1rem .7rem 2.6rem;outline:none;transition:border-color .2s;}
+#searchInput:focus{border-color:rgba(255,209,0,.4);}
+#searchInput::placeholder{color:#334155;}
+.filter-chips{display:flex;flex-wrap:wrap;gap:.5rem;flex:1;}
+.chip{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:#64748b;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;padding:.35rem .8rem;cursor:pointer;transition:all .2s;border-radius:2px;}
+.chip:hover{border-color:rgba(255,209,0,.3);color:#cbd5e1;}
+.chip.active{background:rgba(255,209,0,.12);border-color:rgba(255,209,0,.4);color:#FFD100;}
+.results-count{font-family:'Space Grotesk',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:#334155;min-width:fit-content;}
+
+/* ====== PRODUCT CARDS ====== */
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;}
+@media(min-width:1280px){.products-grid{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:640px){.products-grid{grid-template-columns:repeat(2,1fr);gap:1rem;}}
+
+.pcard{background:#0f172a;border:1px solid rgba(255,255,255,.05);display:flex;flex-direction:column;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;}
+.pcard:hover{border-color:rgba(255,209,0,.25);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4);}
+.pcard-img-wrap{position:relative;aspect-ratio:1;overflow:hidden;background:#070d1a;}
+.pcard-img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+.pcard:hover .pcard-img{transform:scale(1.06);}
+.pcard-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,23,42,.9) 0%,transparent 50%);opacity:0;transition:opacity .3s;}
+.pcard:hover .pcard-img-overlay{opacity:1;}
+.pcard-img-actions{position:absolute;bottom:1rem;left:0;right:0;display:flex;justify-content:center;gap:.5rem;transform:translateY(.5rem);opacity:0;transition:all .3s;}
+.pcard:hover .pcard-img-actions{opacity:1;transform:translateY(0);}
+.pcard-badge{position:absolute;top:.65rem;left:.65rem;background:rgba(255,209,0,.15);border:1px solid rgba(255,209,0,.3);color:#FFD100;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;padding:.25rem .55rem;}
+.pcard-body{padding:1.1rem;flex:1;display:flex;flex-direction:column;}
+.pcard-name{font-weight:900;font-size:.9rem;text-transform:uppercase;letter-spacing:-.01em;color:#e2e8f0;line-height:1.2;margin:0 0 .35rem;flex:1;}
+.pcard-desc{font-size:.75rem;color:#475569;line-height:1.5;margin:0 0 .85rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.pcard-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.05);padding-top:.75rem;margin-top:auto;}
+.pcard-ref{font-family:'Space Grotesk',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:#334155;}
+.pcard-actions{display:flex;gap:.4rem;align-items:center;}
+.btn-detail{background:none;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:#475569;text-decoration:none;padding:.3rem .7rem;border:1px solid rgba(255,255,255,.07);transition:all .2s;display:inline-flex;align-items:center;gap:.25rem;}
+.btn-detail:hover{border-color:rgba(255,255,255,.2);color:#cbd5e1;}
+.btn-cart{background:#FFD100;color:#0d1117;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;padding:.35rem .7rem;display:inline-flex;align-items:center;gap:.3rem;transition:all .2s;}
+.btn-cart:hover{background:#fff;}
+.btn-cart .material-symbols-outlined{font-size:.85rem;}
+/* Category label on plasticos cards */
+.cat-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;color:#FFD100;}
+
+/* ====== PLASTICOS CATEGORY GRID ====== */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1.25rem;}
+@media(min-width:1280px){.cat-grid{grid-template-columns:repeat(6,1fr);}}
+@media(max-width:640px){.cat-grid{grid-template-columns:repeat(2,1fr);gap:.75rem;}}
+.cat-card{background:#0f172a;border:1px solid rgba(255,255,255,.05);display:flex;flex-direction:column;cursor:pointer;transition:all .3s;text-decoration:none;overflow:hidden;}
+.cat-card:hover{border-color:rgba(255,209,0,.3);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.4);}
+.cat-img-wrap{position:relative;aspect-ratio:1;overflow:hidden;background:#070d1a;}
+.cat-img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;}
+.cat-card:hover .cat-img{transform:scale(1.1);}
+.cat-body{padding:.85rem;border-top:1px solid rgba(255,255,255,.05);}
+.cat-name{font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:-.01em;color:#e2e8f0;margin:0 0 .2rem;line-height:1.2;}
+.cat-qty{font-family:'Space Grotesk',sans-serif;font-size:.6rem;color:#334155;text-transform:uppercase;letter-spacing:.1em;}
+.cat-arrow{position:absolute;bottom:.65rem;right:.65rem;width:28px;height:28px;background:#FFD100;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.7);transition:all .25s;}
+.cat-card:hover .cat-arrow{opacity:1;transform:scale(1);}
+
+/* ====== FADE ANIMATION ====== */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease;}
+.fade-up.in{opacity:1;transform:translateY(0);}
+
+/* ====== EMPTY STATE ====== */
+#noResults{display:none;flex-direction:column;align-items:center;padding:5rem 2rem;gap:1.25rem;text-align:center;}
+#noResults .material-symbols-outlined{font-size:3.5rem;color:#1e293b;}
+#noResults p{font-family:'Space Grotesk',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:#334155;}
+
+/* ====== CART DRAWER ====== */
+#cartOverlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:500;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px);}
+#cartOverlay.open{opacity:1;pointer-events:all;}
+#cartDrawer{position:fixed;top:0;right:0;bottom:0;width:min(500px,100vw);background:#0d1117;z-index:501;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;border-left:1px solid rgba(255,209,0,.12);}
+#cartDrawer.open{transform:translateX(0);}
+
+#cartHead{padding:1.35rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+#cartHead h2{font-weight:900;font-size:1rem;text-transform:uppercase;letter-spacing:.06em;color:#fff;margin:0;display:flex;align-items:center;gap:.6rem;}
+.cart-head-badge{background:rgba(255,209,0,.12);border:1px solid rgba(255,209,0,.25);color:#FFD100;font-family:'Space Grotesk',sans-serif;font-size:.65rem;font-weight:700;padding:.2rem .55rem;border-radius:20px;}
+#cartCloseBtn{background:none;border:none;color:#334155;cursor:pointer;display:flex;align-items:center;padding:.2rem;transition:color .2s;}
+#cartCloseBtn:hover{color:#fff;}
+
+#cartList{flex:1;overflow-y:auto;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.85rem;}
+#cartList::-webkit-scrollbar{width:4px;}
+#cartList::-webkit-scrollbar-track{background:transparent;}
+#cartList::-webkit-scrollbar-thumb{background:#1e293b;border-radius:2px;}
+
+#cartEmpty{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:1.25rem;opacity:.45;}
+#cartEmpty .material-symbols-outlined{font-size:4rem;color:#FFD100;}
+#cartEmpty p{font-family:'Space Grotesk',sans-serif;font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:#475569;}
+
+.citem{background:#0f172a;border:1px solid rgba(255,255,255,.06);display:flex;gap:.9rem;padding:.9rem;align-items:flex-start;animation:slideIn .25s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateX(10px);}to{opacity:1;transform:translateX(0);}}
+.citem-img{width:64px;height:64px;object-fit:cover;background:#070d1a;flex-shrink:0;border:1px solid rgba(255,255,255,.05);}
+.citem-body{flex:1;min-width:0;}
+.citem-name{font-weight:800;font-size:.82rem;text-transform:uppercase;color:#e2e8f0;margin:0 0 .15rem;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.citem-ref{font-family:'Space Grotesk',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.1em;color:#334155;margin:0 0 .65rem;}
+.citem-note{font-size:.7rem;color:#475569;margin:.35rem 0 .65rem;font-style:italic;}
+.qty-row{display:flex;align-items:center;gap:0;border:1px solid rgba(255,209,0,.2);width:fit-content;border-radius:2px;overflow:hidden;}
+.qty-dec,.qty-inc{width:2rem;height:2rem;background:rgba(255,209,0,.06);border:none;color:#FFD100;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;transition:background .15s;flex-shrink:0;}
+.qty-dec:hover,.qty-inc:hover{background:rgba(255,209,0,.18);}
+.qty-input{width:3rem;height:2rem;background:transparent;border:none;border-left:1px solid rgba(255,209,0,.15);border-right:1px solid rgba(255,209,0,.15);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.88rem;text-align:center;outline:none;}
+.qty-input::-webkit-inner-spin-button{-webkit-appearance:none;}
+.citem-del{background:none;border:none;color:#1e293b;cursor:pointer;padding:.1rem;transition:color .2s;flex-shrink:0;display:flex;align-items:center;margin-top:.1rem;}
+.citem-del:hover{color:#ef4444;}
+
+#cartFoot{padding:1.25rem 1.5rem;border-top:1px solid rgba(255,255,255,.06);flex-shrink:0;display:none;}
+.cart-totals{background:#0f172a;border:1px solid rgba(255,255,255,.06);padding:.85rem 1rem;margin-bottom:1rem;}
+.cart-totals-row{display:flex;justify-content:space-between;align-items:center;}
+.cart-totals-label{font-family:'Space Grotesk',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#475569;}
+.cart-totals-val{font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:#94a3b8;}
+#cartWABtn{width:100%;background:#25d366;color:#fff;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;padding:.95rem;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:background .2s;margin-bottom:.65rem;}
+#cartWABtn:hover{background:#1da851;}
+#cartClear{width:100%;background:none;border:1px solid rgba(255,255,255,.07);color:#334155;font-family:'Space Grotesk',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;padding:.6rem;cursor:pointer;transition:all .2s;}
+#cartClear:hover{border-color:rgba(239,68,68,.35);color:#ef4444;}
+
+/* ====== QUICK ADD MODAL ====== */
+#qModal{position:fixed;inset:0;z-index:600;display:flex;align-items:center;justify-content:center;padding:1.25rem;opacity:0;pointer-events:none;transition:opacity .22s;}
+#qModal.open{opacity:1;pointer-events:all;}
+#qModalBg{position:absolute;inset:0;background:rgba(0,0,0,.75);}
+#qModalBox{position:relative;z-index:1;background:#0d1117;border:1px solid rgba(255,209,0,.18);width:100%;max-width:440px;overflow:hidden;box-shadow:0 25px 80px rgba(0,0,0,.6);}
+.qm-img{width:100%;height:200px;object-fit:contain;object-position:center;background:#070d1a;padding:.75rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.qm-body{padding:1.5rem;}
+.qm-badge{font-family:'Space Grotesk',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.15em;color:#FFD100;margin-bottom:.5rem;}
+.qm-name{font-weight:900;font-size:1.05rem;text-transform:uppercase;letter-spacing:-.01em;color:#fff;margin:0 0 .2rem;}
+.qm-ref{font-family:'Space Grotesk',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:#334155;margin:0 0 1.25rem;}
+.qm-row{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;}
+.qm-label{font-family:'Space Grotesk',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#64748b;flex-shrink:0;}
+#qQty{width:6rem;height:2.5rem;background:#0f172a;border:1px solid rgba(255,209,0,.2);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem;text-align:center;outline:none;transition:border-color .2s;}
+#qQty:focus{border-color:rgba(255,209,0,.5);}
+#qQty::-webkit-inner-spin-button{-webkit-appearance:none;}
+#qNote{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.1);color:#94a3b8;font-family:'Public Sans',sans-serif;font-size:.83rem;padding:.45rem 0;outline:none;margin-bottom:1.25rem;resize:none;transition:border-color .2s;}
+#qNote:focus{border-color:rgba(255,209,0,.35);}
+#qNote::placeholder{color:#1e293b;}
+#qConfirm{width:100%;background:#FFD100;color:#0d1117;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;padding:.9rem;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:background .2s;}
+#qConfirm:hover{background:#fff;}
+#qClose{position:absolute;top:.75rem;right:.75rem;background:none;border:none;color:#334155;cursor:pointer;display:flex;align-items:center;transition:color .2s;}
+#qClose:hover{color:#fff;}
+
+/* ====== SIDE SPECS (transmisiones) ====== */
+.specs-bar{margin-top:3.5rem;padding:2rem;background:#0f172a;border:1px solid rgba(255,255,255,.06);display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;}
+.spec-item{}
+.spec-lbl{font-family:'Space Grotesk',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.15em;color:#FFD100;margin-bottom:.35rem;}
+.spec-val{font-weight:700;font-size:.9rem;color:#e2e8f0;}
+
+/* ====== CTA BAND ====== */
+.cta-band{background:linear-gradient(90deg,#FFD100 0%,#f0c400 100%);padding:2.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;margin-top:3.5rem;}
+.cta-band h3{font-weight:900;font-size:1.3rem;text-transform:uppercase;color:#0d1117;margin:0;letter-spacing:-.02em;}
+.cta-band p{font-size:.85rem;color:#3b2c00;margin:.3rem 0 0;}
+.cta-band-btn{background:#0d1117;color:#FFD100;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;padding:.8rem 1.75rem;text-decoration:none;transition:all .2s;white-space:nowrap;flex-shrink:0;}
+.cta-band-btn:hover{background:#1e293b;}
+
+/* ====== FOOTER ====== */
+.footer{background:#080c12;border-top:1px solid rgba(255,209,0,.1);padding:3.5rem 2rem 2rem;}
+.footer-inner{max-width:1600px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;}
+.footer-brand{font-weight:900;font-size:1.2rem;text-transform:uppercase;color:#FFD100;letter-spacing:-.02em;margin-bottom:.85rem;}
+.footer-tagline{font-family:'Space Grotesk',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:#334155;line-height:1.8;}
+.footer-h{font-family:'Space Grotesk',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.18em;color:#FFD100;font-weight:700;margin-bottom:1rem;}
+.footer-links{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem;}
+.footer-links a{font-family:'Space Grotesk',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#334155;text-decoration:none;transition:color .2s;}
+.footer-links a:hover,.footer-links a.active{color:#FFD100;}
+.footer-info{font-size:.78rem;color:#334155;line-height:1.8;}
+.footer-bottom{max-width:1600px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.04);display:flex;align-items:center;justify-content:center;}
+.footer-cr{font-family:'Space Grotesk',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:#1e293b;}
+
+/* ====== WA FAB ====== */
+.wa-fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:400;width:3.5rem;height:3.5rem;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.35);transition:transform .2s;}
+.wa-fab:hover{transform:scale(1.1);}
+
+/* ====== HIDDEN ====== */
+.hidden-card{display:none!important;}
+</style>
+</head>
+<body>
+
+<!-- ===== CART OVERLAY + DRAWER ===== -->
+<div id="cartOverlay"></div>
+<div id="cartDrawer" role="dialog" aria-label="Carrito de pedido">
+  <div id="cartHead">
+    <h2>
+      <span class="material-symbols-outlined" style="font-size:1.1rem;">shopping_cart</span>
+      Carrito
+      <span class="cart-head-badge" id="cartHeadBadge">0</span>
+    </h2>
+    <button id="cartCloseBtn" aria-label="Cerrar">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div id="cartList">
+    <div id="cartEmpty">
+      <span class="material-symbols-outlined">inventory_2</span>
+      <p>Tu carrito está vacío</p>
+    </div>
+  </div>
+  <div id="cartFoot">
+    <div class="cart-totals">
+      <div class="cart-totals-row">
+        <span class="cart-totals-label" id="cartItemCount">0 productos</span>
+        <span class="cart-totals-val">Consultar precios</span>
+      </div>
+    </div>
+    <button id="cartWABtn">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar pedido por WhatsApp
+    </button>
+    <button id="cartClear">Vaciar carrito</button>
+  </div>
+</div>
+
+<!-- ===== QUICK ADD MODAL ===== -->
+<div id="qModal">
+  <div id="qModalBg"></div>
+  <div id="qModalBox">
+    <button id="qClose" aria-label="Cerrar"><span class="material-symbols-outlined">close</span></button>
+    <img class="qm-img" id="qImg" src="" alt=""/>
+    <div class="qm-body">
+      <p class="qm-badge" id="qBadge"></p>
+      <h3 class="qm-name" id="qName"></h3>
+      <p class="qm-ref" id="qRef"></p>
+      <div class="qm-row">
+        <span class="qm-label">Cantidad</span>
+        <input id="qQty" type="number" min="1" max="9999" value="1"/>
+      </div>
+      <textarea id="qNote" rows="2" placeholder="Observaciones: medidas, especificaciones, uso…"></textarea>
+      <button id="qConfirm">
+        <span class="material-symbols-outlined" style="font-size:.95rem;">add_shopping_cart</span>
+        Agregar al carrito
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Kadae S.A.</a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="quienes-somos.html" class="nav-link">Quiénes Somos</a>
+      <a href="productos.html" class="nav-link active">Productos</a>
+      <a href="contacto.html" class="nav-link">Contacto</a>
+    </nav>
+    <div class="nav-right">
+      <button class="cart-btn" id="cartToggle" aria-label="Abrir carrito">
+        <span class="material-symbols-outlined" style="font-size:1.15rem;">shopping_cart</span>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <a href="contacto.html" class="nav-cta">Solicitar Cotización</a>
+    </div>
+    <button id="mobToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobMenu">
+    <a href="index.html" class="mob-link">Inicio</a>
+    <a href="quienes-somos.html" class="mob-link">Quiénes Somos</a>
+    <a href="productos.html" class="mob-link active">Productos</a>
+    <a href="contacto.html" class="mob-link">Contacto</a>
+    <button onclick="CART.toggle()" class="mob-link" style="background:none;border:none;width:100%;text-align:left;cursor:pointer;color:#FFD100;">🛒 Mi Carrito</button>
+    <div class="mob-cta-wrap"><a href="contacto.html" class="mob-cta">Solicitar Cotización</a></div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Catálogo Industrial 2026</p>
+    <h1 class="hero-title">Nuestros<br/><span>Productos</span></h1>
+    <p class="hero-sub">Transmisiones cardánicas, repuestos agrícolas y plásticos industriales por inyección y rotomoldeo. Fabricación nacional desde Las Parejas, Santa Fe.</p>
+    <div class="hero-stats">
+      <div><div class="stat-val">+600</div><div class="stat-lbl">Productos</div></div>
+      <div><div class="stat-val">50+</div><div class="stat-lbl">Categorías</div></div>
+      <div><div class="stat-val">40+</div><div class="stat-lbl">Años</div></div>
+      <div><div class="stat-val">100%</div><div class="stat-lbl">Nacional</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATALOG ===== -->
+<main class="catalog">
+
+  <!-- Tabs -->
+  <div class="tabs-bar">
+    <button class="tab-pill active" data-tab="transmisiones" id="tabTransmisiones">
+      <span class="material-symbols-outlined" style="font-size:.9rem;">settings_input_component</span>
+      Transmisiones Cardánicas
+      <span class="tab-count">24</span>
+    </button>
+    <button class="tab-pill" data-tab="plasticos" id="tabPlasticos">
+      <span class="material-symbols-outlined" style="font-size:.9rem;">category</span>
+      Plásticos
+      <span class="tab-count">45+</span>
+    </button>
+  </div>
+
+  <!-- ============================== -->
+  <!-- TAB TRANSMISIONES -->
+  <!-- ============================== -->
+  <div id="content-transmisiones" class="tab-content active">
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="material-symbols-outlined">search</span>
+        <input id="searchInput" type="text" placeholder="Buscar por nombre o referencia…" autocomplete="off"/>
+      </div>
+      <div class="filter-chips" id="filterChips">
+        <button class="chip active" data-filter="all">Todos</button>
+        <button class="chip" data-filter="Crucetas">Crucetas</button>
+        <button class="chip" data-filter="Horquillas">Horquillas</button>
+        <button class="chip" data-filter="Manchones">Manchones</button>
+        <button class="chip" data-filter="Tubos">Tubos</button>
+        <button class="chip" data-filter="Bujes">Bujes</button>
+        <button class="chip" data-filter="Limitadores">Limitadores</button>
+        <button class="chip" data-filter="Zafes">Zafes</button>
+        <button class="chip" data-filter="Barras">Barras</button>
+        <button class="chip" data-filter="Blindajes">Blindajes</button>
+        <button class="chip" data-filter="Adaptadores">Adaptadores</button>
+      </div>
+      <span class="results-count" id="resultsCount"></span>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="products-grid" id="transGrid">
+
+      <!-- CRUCETA K514 CON RODILLOS -->
+      <div class="pcard fade-up" data-cat="Crucetas" data-ref="34096" data-name="Cruceta K514 Con Rodillos" data-href="productos/cruceta-k514-rodillos.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34096.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34096.webp?resize=300%2C300&ssl=1" alt="Cruceta K514 con rodillos" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/cruceta-k514-rodillos.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Crucetas</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Cruceta K514 – Con Rodillos</h3>
+          <p class="pcard-desc">Cruceta serie K514 con rodillos para transmisiones cardánicas de maquinaria agrícola.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34096</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/cruceta-k514-rodillos.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRUCETA K518 CON RODILLOS -->
+      <div class="pcard fade-up" data-cat="Crucetas" data-ref="34095" data-name="Cruceta K518 Con Rodillos" data-href="productos/cruceta-k518-rodillos.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34095.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34095.webp?resize=300%2C300&ssl=1" alt="Cruceta K518 con rodillos" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/cruceta-k518-rodillos.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Crucetas</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Cruceta K518 – Con Rodillos</h3>
+          <p class="pcard-desc">Cruceta serie K518 con rodillos para transmisiones cardánicas industriales.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34095</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/cruceta-k518-rodillos.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRUCETA K521 CON RODILLOS -->
+      <div class="pcard fade-up" data-cat="Crucetas" data-ref="34094" data-name="Cruceta K521 Con Rodillos" data-href="productos/cruceta-k521-rodillos.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34094.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34094.webp?resize=300%2C300&ssl=1" alt="Cruceta K521 con rodillos" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/cruceta-k521-rodillos.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Crucetas</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Cruceta K521 – Con Rodillos</h3>
+          <p class="pcard-desc">Cruceta serie K521 con rodillos para transmisiones de alto torque.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34094</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/cruceta-k521-rodillos.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRUCETA K526 CON RODILLOS -->
+      <div class="pcard fade-up" data-cat="Crucetas" data-ref="34093" data-name="Cruceta K526 Con Rodillos" data-href="productos/cruceta-k526-rodillos.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34093.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34093.webp?resize=300%2C300&ssl=1" alt="Cruceta K526 con rodillos" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/cruceta-k526-rodillos.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Crucetas</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Cruceta K526 – Con Rodillos</h3>
+          <p class="pcard-desc">Cruceta serie K526 con rodillos para transmisiones cardánicas de servicio pesado.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34093</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/cruceta-k526-rodillos.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRUCETA K514 CON BUJES -->
+      <div class="pcard fade-up" data-cat="Crucetas" data-ref="34224" data-name="Cruceta K514 Con Bujes" data-href="productos/cruceta-k514-bujes.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34224.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34224.webp?resize=300%2C300&ssl=1" alt="Cruceta K514 con bujes" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/cruceta-k514-bujes.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Crucetas</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Cruceta K514 – Con Bujes</h3>
+          <p class="pcard-desc">Cruceta serie K514 con bujes para transmisiones cardánicas.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34224</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/cruceta-k514-bujes.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CRUCETA CR1002 -->
+      <div class="pcard fade-up" data-cat="Crucetas" data-ref="34977" data-name="Cruceta CR 1002 Con Rodillos" data-href="productos/cruceta-cr1002-rodillos.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34977.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34977.webp?resize=300%2C300&ssl=1" alt="Cruceta CR 1002 con rodillos" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/cruceta-cr1002-rodillos.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Crucetas</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Cruceta CR 1002 – Con Rodillos</h3>
+          <p class="pcard-desc">Cruceta CR 1002 con rodillos para aplicaciones universales.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34977</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/cruceta-cr1002-rodillos.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HORQUILLA K518 TRILOBULAR -->
+      <div class="pcard fade-up" data-cat="Horquillas" data-ref="34074" data-name="Horquilla K518 Trilobular Exterior" data-href="productos/horquilla-k518-trilobular.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34074.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34074.webp?resize=300%2C300&ssl=1" alt="Horquilla K518 Trilobular Ext" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/horquilla-k518-trilobular.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Horquillas</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Horquilla K518 Trilobular Ext.</h3>
+          <p class="pcard-desc">Horquilla K518 para perfil trilobular exterior. Componente de transmisión cardánica.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34074</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/horquilla-k518-trilobular.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HORQUILLA K521 OVOIDAL -->
+      <div class="pcard fade-up" data-cat="Horquillas" data-ref="34067" data-name="Horquilla K521 Ovoidal Exterior" data-href="productos/horquilla-k521-ovoidal.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34067.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34067.webp?resize=300%2C300&ssl=1" alt="Horquilla K521 Ovoidal Ext" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/horquilla-k521-ovoidal.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Horquillas</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Horquilla K521 Ovoidal Ext.</h3>
+          <p class="pcard-desc">Horquilla K521 para perfil ovoidal exterior. Alta resistencia mecánica.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34067</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/horquilla-k521-ovoidal.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HORQUILLA CON SEGURO A BOLITA -->
+      <div class="pcard fade-up" data-cat="Horquillas" data-ref="HORQ-SAB" data-name="Horquilla Con Seguro a Bolita" data-href="productos/horquilla-seguro-bolita.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/HORQUILLA-CON-SEGURO-A-BOLITA.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/HORQUILLA-CON-SEGURO-A-BOLITA.webp?resize=300%2C300&ssl=1" alt="Horquilla con seguro a bolita" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/horquilla-seguro-bolita.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Horquillas</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Horquilla con Seguro a Bolita</h3>
+          <p class="pcard-desc">Horquilla con sistema de seguro a bolita para conexión rápida y segura.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: HORQ-SAB</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/horquilla-seguro-bolita.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MANCHON DOBLE BULON Z6 -->
+      <div class="pcard fade-up" data-cat="Manchones" data-ref="34217" data-name="Manchon Doble Bulon Z6 1 3/8" data-href="productos/manchon-doble-bulon-z6.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34217.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34217.webp?resize=300%2C300&ssl=1" alt="Manchon doble bulon Z6" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/manchon-doble-bulon-z6.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Manchones</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Manchon Doble Bulon Z6 – 1 3/8″</h3>
+          <p class="pcard-desc">Manchón doble bulón con estriado Z6 de 1 3/8″. Conexión para barras cardánicas.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34217</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/manchon-doble-bulon-z6.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MANCHON DOBLE BULON Z21 -->
+      <div class="pcard fade-up" data-cat="Manchones" data-ref="34287" data-name="Manchon Doble Bulon Z21 1 3/8" data-href="productos/manchon-doble-bulon-z21.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34287.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34287.webp?resize=300%2C300&ssl=1" alt="Manchon doble bulon Z21" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/manchon-doble-bulon-z21.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Manchones</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Manchon Doble Bulon Z21 – 1 3/8″</h3>
+          <p class="pcard-desc">Manchón doble bulón con estriado Z21 de 1 3/8″ para barras cardánicas.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34287</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/manchon-doble-bulon-z21.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MANCHON MDB Z6 PE Z6 -->
+      <div class="pcard fade-up" data-cat="Manchones" data-ref="34238" data-name="Manchon MDB Z6 con Punta Estriada Z6" data-href="productos/manchon-mdb-z6-pe-z6.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34238.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34238.webp?resize=300%2C300&ssl=1" alt="Manchon MDB Z6 PE Z6" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/manchon-mdb-z6-pe-z6.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Manchones</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Manchon MDB Z6 c/PE Z6 1 3/8″</h3>
+          <p class="pcard-desc">Manchón doble bulón Z6 1 3/8″ con punta estriada Z6 1 3/8″.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34238</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/manchon-mdb-z6-pe-z6.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TUBO TRILOBULAR K518 -->
+      <div class="pcard fade-up" data-cat="Tubos" data-ref="34105" data-name="Tubo Trilobular K518 Exterior" data-href="productos/tubo-trilobular-k518.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34105.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34105.webp?resize=300%2C300&ssl=1" alt="Tubo trilobular K518" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/tubo-trilobular-k518.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Tubos</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Tubo Trilobular K518 Exterior</h3>
+          <p class="pcard-desc">Tubo de perfil trilobular exterior serie K518 para barras cardánicas telescópicas.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34105</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/tubo-trilobular-k518.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TUBO OVOIDAL K526 -->
+      <div class="pcard fade-up" data-cat="Tubos" data-ref="34097" data-name="Tubo Ovoidal K526 Exterior" data-href="productos/tubo-ovoidal-k526.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34097.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34097.webp?resize=300%2C300&ssl=1" alt="Tubo ovoidal K526" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/tubo-ovoidal-k526.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Tubos</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Tubo Ovoidal K526 Exterior</h3>
+          <p class="pcard-desc">Tubo de perfil ovoidal exterior serie K526 para transmisiones cardánicas.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34097</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/tubo-ovoidal-k526.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TUBO CUADROLOBULAR -->
+      <div class="pcard fade-up" data-cat="Tubos" data-ref="39182" data-name="Tubo Cuadrolobular Exterior" data-href="productos/tubo-cuadrolobular.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/39182.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/39182.webp?resize=300%2C300&ssl=1" alt="Tubo cuadrolobular" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/tubo-cuadrolobular.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Tubos</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Tubo Cuadrolobular Exterior</h3>
+          <p class="pcard-desc">Tubo de perfil cuadrolobular exterior para transmisiones cardánicas.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 39182</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/tubo-cuadrolobular.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUJE BROCHADO Z21 -->
+      <div class="pcard fade-up" data-cat="Bujes" data-ref="34213" data-name="Buje Brochado Z21 1 3/8" data-href="productos/buje-brochado-z21.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34213.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34213.webp?resize=300%2C300&ssl=1" alt="Buje brochado Z21" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/buje-brochado-z21.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Bujes</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Buje Brochado Z21 1 3/8″</h3>
+          <p class="pcard-desc">Buje brochado con estriado Z21 de 1 3/8″, DE=62,3 – L=82,9.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34213</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/buje-brochado-z21.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUJE SEGURO A BOLITAS Z6 -->
+      <div class="pcard fade-up" data-cat="Bujes" data-ref="39084" data-name="Buje con Seguro a Bolitas Z6 1 3/8" data-href="productos/buje-seguro-bolitas-z6.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/39084.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/39084.webp?resize=300%2C300&ssl=1" alt="Buje seguro bolitas Z6" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/buje-seguro-bolitas-z6.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Bujes</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Buje c/Seguro a Bolitas Z6 1 3/8″</h3>
+          <p class="pcard-desc">Buje con sistema de seguro a bolitas, estriado Z6 de 1 3/8″.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 39084</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/buje-seguro-bolitas-z6.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUJE PARA ENGRANAJE -->
+      <div class="pcard fade-up" data-cat="Bujes" data-ref="34275" data-name="Buje Para Engranaje" data-href="productos/buje-engranaje.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34275.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/04/34275.webp?resize=300%2C300&ssl=1" alt="Buje para engranaje" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/buje-engranaje.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Bujes</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Buje Para Engranaje DE=42,6</h3>
+          <p class="pcard-desc">Buje para engranaje DE=42,6 DI=20,1 L=45 CH 6 x 3 ENG=35.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34275</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/buje-engranaje.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIMITADOR 2 BULONES K518 -->
+      <div class="pcard fade-up" data-cat="Limitadores" data-ref="34027" data-name="Limitador 2 Bulones K518 SAB Z6" data-href="productos/limitador-2-bulones-k518.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34027.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34027.webp?resize=300%2C300&ssl=1" alt="Limitador 2 bulones K518" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/limitador-2-bulones-k518.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Limitadores</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Limitador 2 Bulones K518 SAB Z6</h3>
+          <p class="pcard-desc">Limitador de torque de 2 bulones K518 con seguro a bolitas Z6 de 1 3/8″.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34027</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/limitador-2-bulones-k518.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIMITADOR -->
+      <div class="pcard fade-up" data-cat="Limitadores" data-ref="LIMIT" data-name="Limitador de Torque" data-href="productos/limitador.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/LIMITADOR.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/LIMITADOR.webp?resize=300%2C300&ssl=1" alt="Limitador" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/limitador.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Limitadores</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Limitador de Torque</h3>
+          <p class="pcard-desc">Limitador de torque para protección de transmisiones cardánicas.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: LIMIT</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/limitador.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ZAFE 8R 2F MDB Z6 -->
+      <div class="pcard fade-up" data-cat="Zafes" data-ref="34177" data-name="Zafe 8R 2F MDB Z6 Horquilla K518" data-href="productos/zafe-8r-2f-mdb-z6.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34177.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/34177.webp?resize=300%2C300&ssl=1" alt="Zafe 8R 2F MDB Z6" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/zafe-8r-2f-mdb-z6.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Zafes</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Zafe 8R 2F MDB Z6 – Horq. K518</h3>
+          <p class="pcard-desc">Zafe de seguridad 8R 2F con manchón doble bulón Z6-1 3/8″ y horquilla K518.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34177</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/zafe-8r-2f-mdb-z6.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BARRA CON PROTECTOR -->
+      <div class="pcard fade-up" data-cat="Barras" data-ref="BARRA-PROT" data-name="Barra Con Protector" data-href="productos/barra-con-protector.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/BARRA-CON-PROTECTOR.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/06/BARRA-CON-PROTECTOR.webp?resize=300%2C300&ssl=1" alt="Barra con protector" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/barra-con-protector.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Barras</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Barra Con Protector</h3>
+          <p class="pcard-desc">Barra cardánica completa con protección de seguridad integrada.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: BARRA-PROT</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/barra-con-protector.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLINDAJE MODELO NUEVO -->
+      <div class="pcard fade-up" data-cat="Blindajes" data-ref="BLIND-MN" data-name="Blindaje Modelo Nuevo K514 K526" data-href="productos/blindaje-modelo-nuevo.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/07/BLINDAJE-MODELO-NUEVO.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2025/07/BLINDAJE-MODELO-NUEVO.webp?resize=300%2C300&ssl=1" alt="Blindaje modelo nuevo" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/blindaje-modelo-nuevo.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Blindajes</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Blindaje Modelo Nuevo K514-K526</h3>
+          <p class="pcard-desc">Blindaje modelo nuevo para barra cardánica K514-K518-K521-K526.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: BLIND-MN</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/blindaje-modelo-nuevo.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADAPTADOR BUJE Ø32 -->
+      <div class="pcard fade-up" data-cat="Adaptadores" data-ref="34812" data-name="Adaptador Buje 32 Z6 1 3/8" data-href="productos/adaptador-buje-32.html" data-img="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/34812.webp?resize=300%2C300&ssl=1">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2026/03/34812.webp?resize=300%2C300&ssl=1" alt="Adaptador buje Ø32" loading="lazy"/>
+          <div class="pcard-img-overlay"></div>
+          <div class="pcard-img-actions">
+            <button class="btn-cart" onclick="CART.quick(this)"><span class="material-symbols-outlined">add_shopping_cart</span>Agregar</button>
+            <a class="btn-detail" href="productos/adaptador-buje-32.html" onclick="saveScroll(event,this.href)"><span class="material-symbols-outlined" style="font-size:.75rem;">open_in_new</span>Ver</a>
+          </div>
+          <span class="pcard-badge">Adaptadores</span>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-name">Adaptador – Buje Ø32 Z6 1 3/8″</h3>
+          <p class="pcard-desc">Adaptador – Buje Ø32 CH 7 x 7 x 83 con punta estriada Z6 de 1 3/8″.</p>
+          <div class="pcard-footer">
+            <span class="pcard-ref">REF: 34812</span>
+            <div class="pcard-actions">
+              <a class="btn-detail" href="productos/adaptador-buje-32.html" onclick="saveScroll(event,this.href)">Ver Detalles</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /products-grid -->
+
+    <!-- No results -->
+    <div id="noResults" style="display:none;flex-direction:column;align-items:center;padding:5rem 2rem;gap:1.25rem;text-align:center;">
+      <span class="material-symbols-outlined" style="font-size:3.5rem;color:#1e293b;">search_off</span>
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:#334155;">Sin resultados. Probá con otro término.</p>
+    </div>
+
+    <!-- Specs bar -->
+    <div class="specs-bar">
+      <div class="spec-item"><div class="spec-lbl">Series</div><div class="spec-val">K514 / K518 / K521 / K526</div></div>
+      <div class="spec-item"><div class="spec-lbl">Componentes</div><div class="spec-val">Crucetas / Horquillas / Manchones</div></div>
+      <div class="spec-item"><div class="spec-lbl">Perfiles</div><div class="spec-val">Trilobular / Ovoidal / Cuadrolobular</div></div>
+      <div class="spec-item"><div class="spec-lbl">Fabricación</div><div class="spec-val">Nacional – Las Parejas, SF</div></div>
+    </div>
+
+    <!-- CTA band -->
+    <div class="cta-band">
+      <div>
+        <h3>¿Necesita piezas a medida?</h3>
+        <p>Desarrollamos soluciones cardánicas para proyectos especiales. Consulte a nuestro equipo de ingeniería.</p>
+      </div>
+      <a href="contacto.html" class="cta-band-btn">Consultar Ingeniería</a>
+    </div>
+
+  </div><!-- /content-transmisiones -->
+
+  <!-- ============================== -->
+  <!-- TAB PLÁSTICOS -->
+  <!-- ============================== -->
+  <div id="content-plasticos" class="tab-content">
+
+    <p style="color:#475569;font-size:.9rem;line-height:1.65;max-width:600px;margin-bottom:2rem;">Línea completa de productos plásticos fabricados por inyección y rotomoldeo. Más de 40 categorías con cientos de productos para agroindustria e industria en general.</p>
+
+    <div class="cat-grid">
+
+      <a href="productos/accesorios-chimangos.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/7.jpg?resize=300%2C300&ssl=1" alt="Accesorios chimangos" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Accesorios para Chimangos</p><p class="cat-qty">51 productos</p></div></a>
+
+      <a href="productos/accesorios-piletas.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/34.jpg?resize=300%2C300&ssl=1" alt="Accesorios piletas" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Accesorios para Piletas</p><p class="cat-qty">3 productos</p></div></a>
+
+      <a href="productos/acoples-flexibles.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/33.jpg?resize=300%2C300&ssl=1" alt="Acoples flexibles" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Acoples Flexibles</p><p class="cat-qty">3 productos</p></div></a>
+
+      <a href="productos/arandelas.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/30.jpg?resize=300%2C300&ssl=1" alt="Arandelas" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Arandelas</p><p class="cat-qty">1 producto</p></div></a>
+
+      <a href="productos/banos-quimicos.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/28.jpg?resize=300%2C300&ssl=1" alt="Baños químicos" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Baños Químicos</p><p class="cat-qty">6 productos</p></div></a>
+
+      <a href="productos/boquillas.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/6.jpg?resize=300%2C300&ssl=1" alt="Boquillas" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Boquillas</p><p class="cat-qty">13 productos</p></div></a>
+
+      <a href="productos/canos-de-bajada.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/9.jpg?resize=300%2C300&ssl=1" alt="Caños de bajada" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Caños de Bajada</p><p class="cat-qty">21 productos</p></div></a>
+
+      <a href="productos/caja-velocidad.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/5.jpg?resize=300%2C300&ssl=1" alt="Caja de velocidad" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Caja de Velocidad</p><p class="cat-qty">1 producto</p></div></a>
+
+      <a href="productos/cajones.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/22.jpg?resize=300%2C300&ssl=1" alt="Cajones" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Cajones</p><p class="cat-qty">17 productos</p></div></a>
+
+      <a href="productos/cangilones.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/18.jpg?resize=300%2C300&ssl=1" alt="Cangilones" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Cangilones</p><p class="cat-qty">22 productos</p></div></a>
+
+      <a href="productos/comederos.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/19.jpg?resize=300%2C300&ssl=1" alt="Comederos" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Comederos</p><p class="cat-qty">11 productos</p></div></a>
+
+      <a href="productos/conos-desparramadores.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/3.jpg?resize=300%2C300&ssl=1" alt="Conos desparramadores" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Conos Desparramadores</p><p class="cat-qty">5 productos</p></div></a>
+
+      <a href="productos/contenedores.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/23.jpg?resize=300%2C300&ssl=1" alt="Contenedores" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Contenedores</p><p class="cat-qty">33 productos</p></div></a>
+
+      <a href="productos/cosechadoras.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/2017-1.jpg?resize=300%2C300&ssl=1" alt="Cosechadoras" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Cosechadoras</p><p class="cat-qty">60 productos</p></div></a>
+
+      <a href="productos/empunaduras.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/20.jpg?resize=300%2C300&ssl=1" alt="Empuñaduras" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Empuñaduras</p><p class="cat-qty">1 producto</p></div></a>
+
+      <a href="productos/fertilizacion.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/8.jpg?resize=300%2C300&ssl=1" alt="Fertilización" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Fertilización</p><p class="cat-qty">22 productos</p></div></a>
+
+      <a href="productos/filtros.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/27.jpg?resize=300%2C300&ssl=1" alt="Filtros" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Filtros</p><p class="cat-qty">15 productos</p></div></a>
+
+      <a href="productos/filtros-de-linea.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/12.jpg?resize=300%2C300&ssl=1" alt="Filtros de línea" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Filtros de Línea</p><p class="cat-qty">6 productos</p></div></a>
+
+      <a href="productos/frigorificos.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/29.jpg?resize=300%2C300&ssl=1" alt="Frigoríficos" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Frigoríficos</p><p class="cat-qty">20 productos</p></div></a>
+
+      <a href="productos/guardabarros.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/1.jpg?resize=300%2C300&ssl=1" alt="Guardabarros" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Guardabarros</p><p class="cat-qty">12 productos</p></div></a>
+
+      <a href="productos/iluminacion.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/16.jpg?resize=300%2C300&ssl=1" alt="Iluminación" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Iluminación</p><p class="cat-qty">23 productos</p></div></a>
+
+      <a href="productos/karting.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/31.jpg?resize=300%2C300&ssl=1" alt="Karting" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Karting</p><p class="cat-qty">5 productos</p></div></a>
+
+      <a href="productos/mangueras-tubos.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/36.jpg?resize=300%2C300&ssl=1" alt="Mangueras – Tubos" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Mangueras – Tubos</p><p class="cat-qty">11 productos</p></div></a>
+
+      <a href="productos/mezcladores.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/24.jpg?resize=300%2C300&ssl=1" alt="Mezcladores" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Mezcladores</p><p class="cat-qty">2 productos</p></div></a>
+
+      <a href="productos/pantallas-protectoras.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/26.jpg?resize=300%2C300&ssl=1" alt="Pantallas protectoras" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Pantallas Protectoras</p><p class="cat-qty">3 productos</p></div></a>
+
+      <a href="productos/prensa-canos.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/13.jpg?resize=300%2C300&ssl=1" alt="Prensa caños" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Prensa Caños</p><p class="cat-qty">20 productos</p></div></a>
+
+      <a href="productos/puas.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/2.jpg?resize=300%2C300&ssl=1" alt="Púas" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Púas</p><p class="cat-qty">18 productos</p></div></a>
+
+      <a href="productos/regatones.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/14.jpg?resize=300%2C300&ssl=1" alt="Regatones" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Regatones</p><p class="cat-qty">13 productos</p></div></a>
+
+      <a href="productos/rejillas.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/06/Cat-Rejillas.jpg?resize=300%2C300&ssl=1" alt="Rejillas" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Rejillas</p><p class="cat-qty">3 productos</p></div></a>
+
+      <a href="productos/sembradoras.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/10.jpg?resize=300%2C300&ssl=1" alt="Sembradoras" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Sembradoras</p><p class="cat-qty">222 productos</p></div></a>
+
+      <a href="productos/soportes.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2022/02/10081.jpg?resize=300%2C300&ssl=1" alt="Soportes" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Soportes</p><p class="cat-qty">12 productos</p></div></a>
+
+      <a href="productos/tanques.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/32.jpg?resize=300%2C300&ssl=1" alt="Tanques" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Tanques</p><p class="cat-qty">109 productos</p></div></a>
+
+      <a href="productos/tapas-mazas.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/11.jpg?resize=300%2C300&ssl=1" alt="Tapas para mazas" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Tapas para Mazas</p><p class="cat-qty">46 productos</p></div></a>
+
+      <a href="productos/tapas-tanques.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/25.jpg?resize=300%2C300&ssl=1" alt="Tapas para tanques" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Tapas para Tanques</p><p class="cat-qty">16 productos</p></div></a>
+
+      <a href="productos/tolvas.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/5378ok.jpg?resize=300%2C300&ssl=1" alt="Tolvas" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Tolvas</p><p class="cat-qty">17 productos</p></div></a>
+
+      <a href="productos/varios.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2024/07/Varios-Kadae.webp?resize=300%2C300&ssl=1" alt="Varios" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Varios</p><p class="cat-qty">115 productos</p></div></a>
+
+      <a href="productos/ventiladores.html" class="cat-card" onclick="saveScroll(event,this.href)"><div class="cat-img-wrap"><img class="cat-img" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2023/05/20006.jpg?resize=300%2C300&ssl=1" alt="Ventiladores" loading="lazy"/><div class="cat-arrow"><span class="material-symbols-outlined" style="font-size:.9rem;color:#0d1117;">arrow_forward</span></div></div><div class="cat-body"><p class="cat-name">Ventiladores</p><p class="cat-qty">16 productos</p></div></a>
+
+    </div><!-- /cat-grid -->
+
+    <div class="cta-band">
+      <div>
+        <h3>¿Necesita un producto específico?</h3>
+        <p>Contactenos con el nombre o referencia y le enviamos toda la información.</p>
+      </div>
+      <a href="contacto.html" class="cta-band-btn">Consultar Ahora</a>
+    </div>
+
+  </div><!-- /content-plasticos -->
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Kadae S.A.</div>
+      <p class="footer-tagline">Las Parejas, Santa Fe<br/>Argentina<br/>Industria Nacional</p>
+    </div>
+    <div>
+      <p class="footer-h">Navegación</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+        <li><a href="productos.html" class="active">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-h">Ubicación</p>
+      <p class="footer-info">J.M. de Rosas 176 (Área Industrial)<br/>Las Parejas, Santa Fe<br/>Argentina</p>
+    </div>
+    <div>
+      <p class="footer-h">Contacto</p>
+      <p class="footer-info">Tel: 03471 – 470445 / 141 / 144<br/>ventas@kadae.com.ar</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-cr">© 2026 Kadae S.A. — Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a href="https://api.whatsapp.com/send/?phone=%2B543471587575&text=Hola.+Me+comunico+a+traves+de+la+pagina+web+Kadae+S.A.+por+la+siguiente+consulta%3A" target="_blank" class="wa-fab" aria-label="WhatsApp" id="waFab">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// ============================================================
+// SCROLL POSITION MEMORY
+// ============================================================
+const SCROLL_KEY = 'kadae_productos_scroll';
+const TAB_KEY    = 'kadae_productos_tab';
+
+function saveScroll(e, href) {
+  e && e.preventDefault();
+  sessionStorage.setItem(SCROLL_KEY, window.scrollY);
+  const activeTab = document.querySelector('.tab-pill.active');
+  if (activeTab) sessionStorage.setItem(TAB_KEY, activeTab.dataset.tab);
+  window.location.href = href;
+}
+
+// ============================================================
+// TAB SYSTEM
+// ============================================================
+const tabPills = document.querySelectorAll('.tab-pill');
+const tabContents = document.querySelectorAll('.tab-content');
+
+function activateTab(tabId) {
+  tabPills.forEach(p => p.classList.toggle('active', p.dataset.tab === tabId));
+  tabContents.forEach(c => c.classList.toggle('active', c.id === 'content-' + tabId));
+  // Trigger fade-up on newly visible cards
+  setTimeout(() => {
+    document.querySelectorAll('#content-' + tabId + ' .fade-up').forEach((el, i) => {
+      setTimeout(() => el.classList.add('in'), i * 35);
+    });
+  }, 60);
+}
+
+tabPills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    activateTab(pill.dataset.tab);
+    window.scrollTo({ top: 280, behavior: 'smooth' });
+  });
+});
+
+// Restore tab from session
+const savedTab = sessionStorage.getItem(TAB_KEY);
+if (savedTab) {
+  activateTab(savedTab);
+  sessionStorage.removeItem(TAB_KEY);
+}
+
+// Restore scroll
+const savedY = sessionStorage.getItem(SCROLL_KEY);
+if (savedY !== null) {
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    window.scrollTo({ top: parseInt(savedY), behavior: 'instant' });
+  }));
+  sessionStorage.removeItem(SCROLL_KEY);
+}
+
+// ============================================================
+// MOBILE NAV
+// ============================================================
+const mobToggle = document.getElementById('mobToggle');
+const mobMenu = document.getElementById('mobMenu');
+mobToggle.addEventListener('click', () => {
+  const open = mobMenu.classList.toggle('open');
+  mobToggle.classList.toggle('open', open);
+});
+
+// ============================================================
+// SEARCH + FILTER (Transmisiones only)
+// ============================================================
+const searchInput = document.getElementById('searchInput');
+const filterChips = document.querySelectorAll('#filterChips .chip');
+const cards       = document.querySelectorAll('#transGrid .pcard');
+const noResults   = document.getElementById('noResults');
+const resultsEl   = document.getElementById('resultsCount');
+let currentFilter = 'all';
+let currentSearch = '';
+
+function applyFilters() {
+  let visible = 0;
+  cards.forEach(card => {
+    const cat  = card.dataset.cat || '';
+    const name = (card.dataset.name || '').toLowerCase();
+    const ref  = (card.dataset.ref || '').toLowerCase();
+    const matchCat = currentFilter === 'all' || cat === currentFilter;
+    const matchSrch = !currentSearch || name.includes(currentSearch) || ref.includes(currentSearch);
+    const show = matchCat && matchSrch;
+    card.classList.toggle('hidden-card', !show);
+    if (show) visible++;
+  });
+  noResults.style.display = visible === 0 ? 'flex' : 'none';
+  resultsEl.textContent = visible + ' producto' + (visible !== 1 ? 's' : '');
+}
+
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    filterChips.forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    currentFilter = chip.dataset.filter;
+    applyFilters();
+  });
+});
+
+searchInput.addEventListener('input', () => {
+  currentSearch = searchInput.value.toLowerCase().trim();
+  applyFilters();
+});
+
+applyFilters();
+
+// ============================================================
+// FADE-UP ON SCROLL (IntersectionObserver)
+// ============================================================
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), 60);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+// ============================================================
+// CART ENGINE
+// ============================================================
+let cart = JSON.parse(localStorage.getItem('kadae_cart_v2') || '[]');
+let pendingProduct = null;
+
+const CART = {
+  save() { localStorage.setItem('kadae_cart_v2', JSON.stringify(cart)); },
+
+  badge() {
+    const total = cart.reduce((s, i) => s + i.qty, 0);
+    const b = document.getElementById('cartBadge');
+    b.textContent = total;
+    b.classList.toggle('show', total > 0);
+    document.getElementById('cartHeadBadge').textContent = total;
+  },
+
+  render() {
+    const list    = document.getElementById('cartList');
+    const empty   = document.getElementById('cartEmpty');
+    const foot    = document.getElementById('cartFoot');
+    const countEl = document.getElementById('cartItemCount');
+    list.querySelectorAll('.citem').forEach(n => n.remove());
+
+    if (cart.length === 0) {
+      empty.style.display = 'flex';
+      foot.style.display  = 'none';
+      return;
+    }
+    empty.style.display = 'none';
+    foot.style.display  = 'block';
+    const tot = cart.reduce((s, i) => s + i.qty, 0);
+    countEl.textContent = tot + ' producto' + (tot !== 1 ? 's' : '');
+
+    cart.forEach((item, idx) => {
+      const el = document.createElement('div');
+      el.className = 'citem';
+      el.innerHTML = `
+        <img class="citem-img" src="${item.img}" alt="${item.name}"/>
+        <div class="citem-body">
+          <p class="citem-name">${item.name}</p>
+          <p class="citem-ref">REF: ${item.ref}</p>
+          ${item.note ? `<p class="citem-note">📝 ${item.note}</p>` : ''}
+          <div class="qty-row">
+            <button class="qty-dec" onclick="CART.changeQty(${idx},-1)">−</button>
+            <input class="qty-input" type="number" min="1" max="9999" value="${item.qty}"
+              onchange="CART.setQty(${idx},this.value)" oninput="CART.setQty(${idx},this.value)"/>
+            <button class="qty-inc" onclick="CART.changeQty(${idx},1)">+</button>
+          </div>
+        </div>
+        <button class="citem-del" onclick="CART.remove(${idx})" aria-label="Eliminar">
+          <span class="material-symbols-outlined" style="font-size:1rem;">delete</span>
+        </button>
+      `;
+      list.appendChild(el);
+    });
+  },
+
+  changeQty(idx, delta) {
+    cart[idx].qty = Math.max(1, (cart[idx].qty || 1) + delta);
+    this.save(); this.badge(); this.render();
+  },
+
+  setQty(idx, val) {
+    const n = parseInt(val);
+    if (!isNaN(n) && n >= 1) { cart[idx].qty = n; this.save(); this.badge(); }
+  },
+
+  remove(idx) {
+    cart.splice(idx, 1);
+    this.save(); this.badge(); this.render();
+  },
+
+  add(product) {
+    const ex = cart.find(i => i.ref === product.ref);
+    if (ex) { ex.qty += product.qty; ex.note = product.note || ex.note; }
+    else { cart.push({ ...product }); }
+    this.save(); this.badge(); this.render();
+  },
+
+  toggle(forceOpen) {
+    const overlay = document.getElementById('cartOverlay');
+    const drawer  = document.getElementById('cartDrawer');
+    const isOpen  = drawer.classList.contains('open');
+    const open    = forceOpen !== undefined ? forceOpen : !isOpen;
+    overlay.classList.toggle('open', open);
+    drawer.classList.toggle('open', open);
+    if (open) this.render();
+  },
+
+  quick(btn) {
+    const card = btn.closest('.pcard');
+    if (!card) return;
+    pendingProduct = {
+      name: card.dataset.name,
+      ref:  card.dataset.ref,
+      img:  card.dataset.img,
+      cat:  card.dataset.cat
+    };
+    document.getElementById('qImg').src = pendingProduct.img;
+    document.getElementById('qName').textContent = pendingProduct.name;
+    document.getElementById('qRef').textContent  = 'REF: ' + pendingProduct.ref;
+    document.getElementById('qBadge').textContent = pendingProduct.cat || '';
+    document.getElementById('qQty').value = 1;
+    document.getElementById('qNote').value = '';
+    document.getElementById('qModal').classList.add('open');
+    setTimeout(() => document.getElementById('qQty').focus(), 80);
+  }
+};
+
+// Cart button events
+document.getElementById('cartToggle').addEventListener('click', () => CART.toggle());
+document.getElementById('cartOverlay').addEventListener('click', () => CART.toggle(false));
+document.getElementById('cartCloseBtn').addEventListener('click', () => CART.toggle(false));
+document.getElementById('cartClear').addEventListener('click', () => {
+  if (confirm('¿Vaciar el carrito?')) { cart = []; CART.save(); CART.badge(); CART.render(); }
+});
+document.getElementById('cartWABtn').addEventListener('click', () => {
+  if (!cart.length) return;
+  let msg = '¡Hola Kadae! Quiero consultar por los siguientes productos:\n\n';
+  cart.forEach(i => {
+    msg += `• *${i.name}* (REF: ${i.ref}) — Cant: ${i.qty}`;
+    if (i.note) msg += ` — Obs: ${i.note}`;
+    msg += '\n';
+  });
+  msg += '\n¡Gracias!';
+  window.open(`https://api.whatsapp.com/send/?phone=%2B5493471527595&text=${encodeURIComponent(msg)}`, '_blank');
+});
+
+// Quick modal events
+document.getElementById('qModalBg').addEventListener('click', () => document.getElementById('qModal').classList.remove('open'));
+document.getElementById('qClose').addEventListener('click', () => document.getElementById('qModal').classList.remove('open'));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('qModal').classList.remove('open'); });
+document.getElementById('qConfirm').addEventListener('click', () => {
+  if (!pendingProduct) return;
+  const qty  = Math.max(1, parseInt(document.getElementById('qQty').value) || 1);
+  const note = document.getElementById('qNote').value.trim();
+  CART.add({ ...pendingProduct, qty, note });
+  document.getElementById('qModal').classList.remove('open');
+  CART.toggle(true);
+  pendingProduct = null;
+});
+
+// Also fire quick modal from card image click (overlay hover)
+document.querySelectorAll('#transGrid .pcard').forEach(card => {
+  card.querySelector('.pcard-img-wrap').addEventListener('click', (e) => {
+    if (e.target.closest('.btn-cart') || e.target.closest('.btn-detail')) return;
+    const href = card.dataset.href;
+    if (href) saveScroll(null, href);
+  });
+});
+
+// Initialize
+CART.badge();
+
+// Adjust WA FAB position when cart is open on mobile
+document.getElementById('cartDrawer').addEventListener('transitionend', () => {
+  const isOpen = document.getElementById('cartDrawer').classList.contains('open');
+  document.getElementById('waFab').style.display = isOpen ? 'none' : 'flex';
+});
+</script>
+</body>
+</html>

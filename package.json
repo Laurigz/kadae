@@ -1,0 +1,12 @@
+{
+  "name": "kadae-website",
+  "version": "1.0.0",
+  "description": "Website for Kadae S.A.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite website"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}

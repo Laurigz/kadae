@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kadae S.A. | Varios – Plásticos</title>
+<meta name="description" content="Productos plásticos varios. 115 artículos de uso general para la industria, el agro y otras aplicaciones."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700;800;900&family=Public+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Public Sans',sans-serif;background:#fff;color:#111;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Work Sans',sans-serif;}
+a{text-decoration:none;}
+img{display:block;}
+
+/* ── NAV ── */
+.pnav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid #f1f5f9;}
+.pnav-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;max-width:1400px;margin:0 auto;gap:1rem;}
+.pnav-logo{font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.2rem;color:#111;text-transform:uppercase;letter-spacing:-.02em;flex-shrink:0;}
+.pnav-logo:hover{color:#111;}
+.pnav-links{display:flex;gap:2rem;align-items:center;}
+.pnav-link{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:#64748b;transition:color .2s;}
+.pnav-link:hover{color:#111;}
+.pnav-link.active{color:#111;border-bottom:2px solid #FFD100;padding-bottom:2px;}
+.pnav-right{display:flex;align-items:center;gap:.65rem;flex-shrink:0;}
+.pnav-cart{position:relative;width:2.2rem;height:2.2rem;background:#f8fafc;border:1px solid #e2e8f0;border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;flex-shrink:0;}
+.pnav-cart:hover{background:#fffbea;border-color:#FFD100;}
+.pnav-cart svg{width:17px;height:17px;stroke:#334155;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+#kNavBadge{position:absolute;top:-6px;right:-6px;background:#FFD100;color:#0d1117;border-radius:50%;width:17px;height:17px;font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:.55rem;display:none;align-items:center;justify-content:center;transition:transform .15s;}
+.pnav-cta{background:#FFD100;color:#111;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;padding:.55rem 1.2rem;transition:all .2s;white-space:nowrap;}
+.pnav-cta:hover{background:#0d1117;color:#FFD100;}
+#pMobToggle{display:none;background:none;border:none;cursor:pointer;padding:.2rem;flex-direction:column;gap:5px;}
+#pMobToggle span{display:block;width:21px;height:2px;background:#111;transition:all .3s;border-radius:1px;}
+#pMobToggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px);}
+#pMobToggle.open span:nth-child(2){opacity:0;}
+#pMobToggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
+#pMobMenu{max-height:0;overflow:hidden;transition:max-height .4s ease;background:#fff;border-top:1px solid #f1f5f9;}
+#pMobMenu.open{max-height:360px;}
+.pmob-link{display:block;padding:.75rem 2rem;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#64748b;border-bottom:1px solid #f8fafc;}
+.pmob-link:hover,.pmob-link.active{color:#111;}
+.pmob-cta{display:block;background:#FFD100;color:#0d1117;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;padding:.85rem 2rem;text-align:center;margin:.75rem 1.5rem 1rem;}
+@media(max-width:768px){
+  #pMobToggle{display:flex;}
+  .pnav-links,.pnav-cta{display:none!important;}
+  .pnav-inner{padding:.9rem 1.25rem;}
+}
+
+/* ── BREADCRUMB ── */
+.breadcrumb{font-family:'Space Grotesk',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.15em;color:#94a3b8;display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;padding:1.25rem 2rem;max-width:1400px;margin:0 auto;border-bottom:1px solid #f8fafc;}
+.breadcrumb a{color:#94a3b8;transition:color .2s;}
+.breadcrumb a:hover{color:#111;}
+.breadcrumb span{color:#cbd5e1;}
+.breadcrumb b{color:#334155;font-weight:700;}
+
+/* ── MAIN LAYOUT ── */
+.pmain{max-width:1400px;margin:0 auto;padding:3rem 2rem 5rem;}
+@media(max-width:640px){.pmain{padding:2rem 1.25rem 4rem;}}
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+@media(max-width:900px){.pgrid{grid-template-columns:1fr;gap:2.5rem;}}
+
+/* ── IMAGE ── */
+.pimg-wrap{position:relative;background:#f8fafc;border:1px solid #f1f5f9;overflow:hidden;}
+.pimg-wrap::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:#FFD100;}
+.pimg{width:100%;aspect-ratio:1;object-fit:contain;padding:2rem;transition:transform .6s ease;}
+.pimg:hover{transform:scale(1.04);}
+.pimg-placeholder{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:5rem;color:#e2e8f0;}
+.pimg-badge{position:absolute;top:1rem;left:1rem;background:#FFD100;color:#0d1117;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.58rem;text-transform:uppercase;letter-spacing:.12em;padding:.25rem .7rem;}
+
+/* ── PRODUCT INFO ── */
+.pcat-label{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.62rem;text-transform:uppercase;letter-spacing:.2em;color:#FFD100;margin-bottom:.6rem;}
+.ptitle{font-weight:900;font-size:clamp(1.75rem,4vw,2.6rem);text-transform:uppercase;letter-spacing:-.025em;color:#0f172a;line-height:1.05;margin-bottom:1.1rem;}
+.pdesc{font-size:1rem;color:#475569;line-height:1.7;border-left:3px solid #FFD100;padding-left:1.25rem;margin-bottom:2rem;}
+
+/* ── REF BOX ── */
+.pref-box{display:flex;align-items:center;gap:.85rem;background:#f8fafc;border:1px solid #f1f5f9;border-left:3px solid #FFD100;padding:.85rem 1.1rem;margin-bottom:1.75rem;}
+.pref-label{font-family:'Space Grotesk',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.15em;color:#94a3b8;margin-bottom:.15rem;}
+.pref-val{font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.3rem;color:#0f172a;letter-spacing:-.02em;}
+
+/* ── SPECS TABLE ── */
+.pspecs-title{font-family:'Space Grotesk',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:#94a3b8;font-weight:700;margin-bottom:.85rem;}
+.pspecs-table{width:100%;border-collapse:collapse;margin-bottom:2rem;}
+.pspecs-table tr{border-bottom:1px solid #f1f5f9;}
+.pspecs-table tr:last-child{border-bottom:none;}
+.pspecs-table td:first-child{font-family:'Space Grotesk',sans-serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:#94a3b8;font-weight:600;padding:.65rem .75rem .65rem 0;width:40%;vertical-align:top;}
+.pspecs-table td:last-child{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;color:#0f172a;padding:.65rem 0;}
+
+/* ── CART BLOCK ── */
+.pcart-block{background:#f8fafc;border:1px solid #f1f5f9;padding:1.35rem;margin-bottom:1.25rem;}
+.pcart-block-label{font-family:'Space Grotesk',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:#94a3b8;margin-bottom:.75rem;}
+.pcart-qty-row{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;}
+.pcart-qty-label{font-family:'Space Grotesk',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:#64748b;flex-shrink:0;}
+.pcart-qty-ctrl{display:flex;align-items:center;border:1.5px solid #e2e8f0;border-radius:2px;overflow:hidden;}
+.pcart-qty-ctrl button{width:2.2rem;height:2.2rem;background:#fff;border:none;cursor:pointer;font-size:1.1rem;font-weight:700;color:#334155;transition:background .15s;}
+.pcart-qty-ctrl button:hover{background:#fffbea;}
+.pcart-qty-ctrl input{width:3.2rem;height:2.2rem;border:none;border-left:1.5px solid #e2e8f0;border-right:1.5px solid #e2e8f0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.9rem;text-align:center;outline:none;color:#0f172a;}
+.pcart-qty-ctrl input:focus+.border-yellow{border-color:#FFD100;}
+.pcart-note{width:100%;border:none;border-bottom:1.5px solid #e2e8f0;font-family:'Space Grotesk',sans-serif;font-size:.78rem;padding:.4rem 0;background:transparent;color:#334155;outline:none;resize:none;margin-bottom:1rem;}
+.pcart-note::placeholder{color:#cbd5e1;}
+.pcart-note:focus{border-color:#FFD100;}
+.btn-add-cart{width:100%;background:#FFD100;color:#0d1117;border:none;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;padding:.95rem;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:all .2s;}
+.btn-add-cart:hover{background:#0d1117;color:#FFD100;}
+.btn-add-cart svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+
+/* ── SECONDARY ACTIONS ── */
+.pactions{display:flex;gap:.65rem;flex-wrap:wrap;margin-top:.65rem;}
+.btn-sec{flex:1;min-width:140px;background:#fff;color:#334155;border:1.5px solid #e2e8f0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;padding:.75rem 1rem;display:flex;align-items:center;justify-content:center;gap:.45rem;transition:all .2s;cursor:pointer;}
+.btn-sec:hover{border-color:#111;color:#111;}
+.btn-sec svg{width:15px;height:15px;flex-shrink:0;}
+.btn-wa{background:#fff;color:#25d366;border-color:#c3f0d0;}
+.btn-wa:hover{background:#25d366;color:#fff;border-color:#25d366;}
+
+/* ── BACK LINK ── */
+.pback{display:inline-flex;align-items:center;gap:.5rem;font-family:'Space Grotesk',sans-serif;font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:#94a3b8;transition:color .2s;margin-top:3rem;padding-top:2rem;border-top:1px solid #f1f5f9;}
+.pback:hover{color:#111;}
+.pback svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ── INFO CARDS (plasticos) ── */
+.pinfo-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.75rem;}
+.pinfo-card{background:#f8fafc;border:1px solid #f1f5f9;padding:1rem;}
+.pinfo-card-icon{font-size:1.4rem;margin-bottom:.35rem;color:#FFD100;}
+.pinfo-card-title{font-family:'Space Grotesk',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.15em;font-weight:700;color:#94a3b8;margin-bottom:.2rem;}
+.pinfo-card-val{font-family:'Space Grotesk',sans-serif;font-size:.78rem;font-weight:700;color:#0f172a;}
+.pcnt-box{background:#fffbea;border:1px solid #FFD100;border-left:3px solid #FFD100;padding:.85rem 1.1rem;margin-bottom:1.75rem;display:flex;align-items:center;gap:.85rem;}
+.pcnt-val{font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.5rem;color:#0f172a;}
+.pcnt-lbl{font-family:'Space Grotesk',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:#94a3b8;margin-bottom:.1rem;}
+
+/* ── FOOTER ── */
+.pfooter{background:#0f172a;border-top:3px solid #FFD100;padding:3rem 2rem 2rem;}
+.pfooter-inner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2.25rem;}
+.pfooter-brand{font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.15rem;text-transform:uppercase;color:#FFD100;letter-spacing:-.02em;margin-bottom:.65rem;}
+.pfooter-sub{font-family:'Space Grotesk',sans-serif;font-size:.6rem;text-transform:uppercase;letter-spacing:.15em;color:#334155;line-height:1.9;}
+.pfooter-h{font-family:'Space Grotesk',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.2em;color:#FFD100;font-weight:700;margin-bottom:.85rem;}
+.pfooter-links{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.pfooter-links a{font-family:'Space Grotesk',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#334155;transition:color .2s;}
+.pfooter-links a:hover,.pfooter-links a.active{color:#FFD100;}
+.pfooter-info{font-size:.75rem;color:#334155;line-height:1.85;}
+.pfooter-bottom{max-width:1400px;margin:2rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);text-align:center;}
+.pfooter-cr{font-family:'Space Grotesk',sans-serif;font-size:.58rem;text-transform:uppercase;letter-spacing:.2em;color:#1e293b;}
+
+/* ── WA FAB ── */
+.wa-fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:400;width:3.25rem;height:3.25rem;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.35);transition:transform .2s;}
+.wa-fab:hover{transform:scale(1.1);}
+
+/* ── TOAST ── */
+#kToast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:#0f172a;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;padding:.7rem 1.35rem;z-index:1000;opacity:0;transition:all .3s;white-space:nowrap;display:flex;align-items:center;gap:.5rem;}
+#kToast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;}
+</style>
+</head>
+<body>
+<div id="kToast">✓ Agregado al carrito</div>
+<header class="pnav">
+  <div class="pnav-inner">
+    <a href="../index.html" class="pnav-logo">Kadae S.A.</a>
+    <nav class="pnav-links">
+      <a href="../index.html"         class="pnav-link">Inicio</a>
+      <a href="../quienes-somos.html" class="pnav-link">Quiénes Somos</a>
+      <a href="../productos.html"     class="pnav-link active">Productos</a>
+      <a href="../contacto.html"      class="pnav-link">Contacto</a>
+    </nav>
+    <div class="pnav-right">
+      <button class="pnav-cart" id="kNavCartBtn" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        <span id="kNavBadge">0</span>
+      </button>
+      <a href="../contacto.html" class="pnav-cta">Solicitar Cotización</a>
+    </div>
+    <button id="pMobToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div id="pMobMenu">
+    <a href="../index.html"         class="pmob-link">Inicio</a>
+    <a href="../quienes-somos.html" class="pmob-link">Quiénes Somos</a>
+    <a href="../productos.html"     class="pmob-link active">Productos</a>
+    <a href="../contacto.html"      class="pmob-link">Contacto</a>
+    <button onclick="window.KADAECART&&window.KADAECART.open()" class="pmob-link" style="background:none;border:none;width:100%;text-align:left;cursor:pointer;color:#FFD100;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;padding:.75rem 2rem;">🛒 Mi Carrito</button>
+    <a href="../contacto.html" class="pmob-cta">Solicitar Cotización</a>
+  </div>
+</header>
+
+<nav class="breadcrumb">
+  <a href="../productos.html">Productos</a>
+  <span>/</span>
+  <a href="../productos.html">Plásticos</a>
+  <span>/</span>
+  <b>Varios</b>
+</nav>
+
+<main class="pmain">
+  <div class="pgrid">
+
+    <!-- IMAGE -->
+    <div>
+      <div class="pimg-wrap">
+        <img class="pimg" id="pProductImg" src="https://i0.wp.com/kadae.com.ar/wp-content/uploads/2024/07/Varios-Kadae.webp?resize=600%2C600&ssl=1" alt="Varios" loading="eager"/>
+        <span class="pimg-badge">Plásticos</span>
+      </div>
+    </div>
+
+    <!-- INFO -->
+    <div>
+      <p class="pcat-label" id="pProductCat">Plásticos</p>
+      <h1 class="ptitle" id="pProductName">Varios</h1>
+      <p class="pdesc">Productos plásticos varios. 115 artículos de uso general para la industria, el agro y otras aplicaciones.</p>
+
+      <div class="pcnt-box">
+        <div>
+          <div class="pcnt-lbl">Productos disponibles</div>
+          <div class="pcnt-val" id="pProductRef">115</div>
+        </div>
+      </div>
+
+      <div class="pinfo-grid">
+        <div class="pinfo-card">
+          <div class="pinfo-card-icon">⚙️</div>
+          <div class="pinfo-card-title">Fabricación</div>
+          <div class="pinfo-card-val">Inyección y Rotomoldeo</div>
+        </div>
+        <div class="pinfo-card">
+          <div class="pinfo-card-icon">📍</div>
+          <div class="pinfo-card-title">Origen</div>
+          <div class="pinfo-card-val">Las Parejas, Santa Fe</div>
+        </div>
+        <div class="pinfo-card">
+          <div class="pinfo-card-icon">🏭</div>
+          <div class="pinfo-card-title">Estándar</div>
+          <div class="pinfo-card-val">Industria Nacional</div>
+        </div>
+        <div class="pinfo-card">
+          <div class="pinfo-card-icon">⭐</div>
+          <div class="pinfo-card-title">Experiencia</div>
+          <div class="pinfo-card-val">Más de 40 años</div>
+        </div>
+      </div>
+
+      <!-- CART BLOCK -->
+      <div class="pcart-block">
+        <p class="pcart-block-label">Agregar al pedido de consulta</p>
+        <div class="pcart-qty-row">
+          <span class="pcart-qty-label">Cantidad</span>
+          <div class="pcart-qty-ctrl">
+            <button onclick="pQtyChange(-1)">−</button>
+            <input type="number" id="pageQty" value="1" min="1" max="9999"/>
+            <button onclick="pQtyChange(1)">+</button>
+          </div>
+        </div>
+        <textarea class="pcart-note" id="pageNote" rows="2" placeholder="Observaciones: modelo específico, medidas, cantidad…"></textarea>
+        <button class="btn-add-cart" onclick="pageAddCart()">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          Agregar al pedido
+        </button>
+      </div>
+
+      <div class="pactions">
+        <a href="../contacto.html" class="btn-sec">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Solicitar Catálogo
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=%2B543471587575&text=Hola%2C%20quisiera%20consultar%20por%20la%20categor%C3%ADa%3A%20Varios" target="_blank" class="btn-sec btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+
+      <a href="../productos.html" class="pback">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        Volver al Catálogo
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="pfooter">
+  <div class="pfooter-inner">
+    <div>
+      <div class="pfooter-brand">Kadae S.A.</div>
+      <p class="pfooter-sub">Las Parejas, Santa Fe<br/>Argentina<br/>Industria Nacional</p>
+    </div>
+    <div>
+      <p class="pfooter-h">Navegación</p>
+      <ul class="pfooter-links">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../quienes-somos.html">Quiénes Somos</a></li>
+        <li><a href="../productos.html" class="active">Productos</a></li>
+        <li><a href="../contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="pfooter-h">Ubicación</p>
+      <p class="pfooter-info">J.M. de Rosas 176 (Área Industrial)<br/>Las Parejas, Santa Fe<br/>Argentina</p>
+    </div>
+    <div>
+      <p class="pfooter-h">Contacto</p>
+      <p class="pfooter-info">Tel: 03471 – 470445 / 141 / 144<br/>ventas@kadae.com.ar</p>
+    </div>
+  </div>
+  <div class="pfooter-bottom">
+    <p class="pfooter-cr">© 2026 Kadae S.A. — Todos los derechos reservados</p>
+  </div>
+</footer>
+<a href="https://api.whatsapp.com/send/?phone=%2B543471587575&text=Hola.+Me+comunico+a+traves+de+la+pagina+web+Kadae+S.A.+por+la+siguiente+consulta%3A" target="_blank" class="wa-fab" aria-label="WhatsApp">
+  <svg width="25" height="25" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script>
+// Mobile nav
+const pmt = document.getElementById('pMobToggle');
+const pmm = document.getElementById('pMobMenu');
+if(pmt) pmt.addEventListener('click',()=>{
+  const o = pmm.classList.toggle('open');
+  pmt.classList.toggle('open',o);
+});
+// Toast helper
+function showToast(msg){
+  const t = document.getElementById('kToast');
+  t.textContent = '✓ ' + msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2200);
+}
+// Quick add from this page
+function pageAddCart(){
+  if(!window.KADAECART){ alert('Error: carrito no disponible'); return; }
+  const qty  = parseInt(document.getElementById('pageQty').value)||1;
+  const note = document.getElementById('pageNote').value.trim();
+  const name = document.getElementById('pProductName').textContent;
+  const ref  = document.getElementById('pProductRef').textContent;
+  const img  = document.getElementById('pProductImg').src;
+  const cat  = document.getElementById('pProductCat').textContent;
+  KADAECART.add({name, ref, img, cat, qty, note});
+  showToast('Agregado al carrito');
+}
+// Qty controls
+function pQtyChange(d){
+  const i = document.getElementById('pageQty');
+  i.value = Math.max(1, Math.min(9999, parseInt(i.value||1)+d));
+}
+</script>
+<script src="../cart.js"></script>
+</body></html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto | Kadae S.A.</title>
+<meta name="description" content="Contacte a Kadae S.A. para cotizaciones, consultas técnicas y pedidos especiales. J.M. de Rosas 176, Las Parejas, Santa Fe."/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700;800;900&family=Public+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', sans-serif; background: #111827; color: #fff; margin: 0; }
+  h1, h2, h3, h4 { font-family: 'Work Sans', sans-serif; }
+  :root { --bg-hero:#0f172a; --bg-dark:#111827; --bg-mid:#1e293b; --bg-light:#f8f5f0; --bg-footer:#0d1117; --accent:#FFD100; --accent-dk:#C9A800; }
+  /* Navbar */
+  #navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(15,23,42,0.96); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,209,0,0.15); }
+  #navbar-inner { display:flex; align-items:center; justify-content:space-between; padding:1.4rem 2.5rem; max-width:1600px; margin:0 auto; }
+  .nav-logo { font-family:'Work Sans',sans-serif; font-weight:900; font-size:1.5rem; color:var(--accent); text-decoration:none; letter-spacing:-0.02em; text-transform:uppercase; }
+  .nav-links { display:flex; gap:2.5rem; align-items:center; }
+  .nav-link { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; color:#94a3b8; text-decoration:none; transition:color 0.2s; position:relative; }
+  .nav-link:hover, .nav-link.active { color:#fff; }
+  .nav-link.active::after { content:''; position:absolute; bottom:-4px; left:0; right:0; height:2px; background:var(--accent); }
+  .nav-cta { background:var(--accent); color:#0f172a; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; padding:0.7rem 1.6rem; text-decoration:none; transition:background 0.2s; }
+  .nav-cta:hover { background:#fff; }
+  #mobileToggle { display:none; background:none; border:none; cursor:pointer; padding:0; }
+  #mobileToggle span { display:block; width:24px; height:2px; background:#fff; margin:5px 0; transition:all 0.3s; }
+  #mobileToggle.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  #mobileToggle.open span:nth-child(2) { opacity:0; }
+  #mobileToggle.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+  #mobileMenu { max-height:0; overflow:hidden; transition:max-height 0.4s ease; background:var(--bg-hero); border-top:1px solid rgba(255,209,0,0.15); }
+  #mobileMenu.open { max-height:400px; }
+  .mob-link { display:block; padding:0.85rem 2rem; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em; color:#94a3b8; text-decoration:none; transition:color 0.2s; }
+  .mob-link:hover { color:var(--accent); }
+  .mob-cta { display:block; margin:0.75rem 2rem 1.5rem; background:var(--accent); color:#0f172a; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; padding:0.85rem; text-align:center; text-decoration:none; }
+  @media(max-width:768px) { #mobileToggle{display:block;} .nav-links,.nav-cta-wrap{display:none!important;} #navbar-inner{padding:1.1rem 1.5rem;} }
+  .fade-up { opacity:0; transform:translateY(40px); transition:opacity 0.75s ease, transform 0.75s ease; }
+  .fade-up.in { opacity:1; transform:translateY(0); }
+  .dots { background-image:radial-gradient(rgba(255,209,0,0.2) 1px, transparent 1px); background-size:28px 28px; }
+  #waFab { position:fixed; bottom:1.5rem; right:1.5rem; z-index:200; width:3.5rem; height:3.5rem; border-radius:50%; background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); opacity:0; transform:scale(0.5); transition:opacity 0.4s, transform 0.4s; text-decoration:none; }
+  #waFab.show { opacity:1; transform:scale(1); }
+  #waFab:hover { transform:scale(1.08); }
+  /* Form inputs */
+  .form-input {
+    width:100%; background:transparent; border:none;
+    border-bottom:2px solid rgba(255,255,255,0.15);
+    padding:0.75rem 0; color:#fff; font-family:'Public Sans',sans-serif; font-size:1rem;
+    outline:none; transition:border-color 0.2s;
+  }
+  .form-input::placeholder { color:#475569; }
+  .form-input:focus { border-bottom-color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div id="navbar-inner">
+    <a href="index.html" class="nav-logo">Kadae S.A.</a>
+    <div class="nav-links">
+      <a href="index.html"         class="nav-link">Inicio</a>
+      <a href="quienes-somos.html" class="nav-link">Quiénes Somos</a>
+      <a href="productos.html"     class="nav-link">Productos</a>
+      <a href="contacto.html"      class="nav-link active">Contacto</a>
+    </div>
+    <div class="nav-cta-wrap"><a href="contacto.html" class="nav-cta">Solicitar Cotización</a></div>
+    <button id="mobileToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobileMenu">
+    <a href="index.html"         class="mob-link">Inicio</a>
+    <a href="quienes-somos.html" class="mob-link">Quiénes Somos</a>
+    <a href="productos.html"     class="mob-link">Productos</a>
+    <a href="contacto.html"      class="mob-link">Contacto</a>
+    <a href="contacto.html"      class="mob-cta">Solicitar Cotización</a>
+  </div>
+</nav>
+
+<main style="padding-top:82px;">
+
+<!-- HERO -->
+<section style="position:relative;background:var(--bg-hero);padding:5rem 2.5rem 4rem;overflow:hidden;">
+  <div class="dots" style="position:absolute;right:0;top:0;width:35%;height:100%;opacity:0.2;z-index:0;"></div>
+  <div style="max-width:1600px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:flex-end;" class="hero-grid">
+    <div>
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--accent);display:block;margin-bottom:1rem;">Contacto</span>
+      <h1 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:clamp(3rem,8vw,7rem);line-height:0.9;letter-spacing:-0.03em;text-transform:uppercase;color:#fff;margin:0;">Contac<br/>tanos</h1>
+    </div>
+    <div style="padding-bottom:0.5rem;">
+      <p style="font-size:1.05rem;color:#94a3b8;max-width:500px;border-left:3px solid var(--accent);padding-left:1.5rem;line-height:1.7;margin:0;">
+        Estamos listos para gestionar sus requerimientos industriales con la precisión y el compromiso que su empresa necesita.
+      </p>
+    </div>
+  </div>
+  <!-- Decorative watermark -->
+  <div style="position:absolute;bottom:-2rem;right:-2rem;font-family:'Work Sans',sans-serif;font-weight:900;font-size:14rem;color:#fff;opacity:0.03;pointer-events:none;user-select:none;text-transform:uppercase;line-height:1;">KADAE</div>
+</section>
+
+<!-- MAIN CONTACT GRID -->
+<section style="max-width:1600px;margin:0 auto;padding:5rem 2.5rem;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(255,255,255,0.08);" class="contact-grid">
+
+    <!-- INFO PANEL (slate-900) -->
+    <div style="padding:3.5rem 3.5rem 3.5rem 0;border-right:1px solid rgba(255,255,255,0.06);">
+      <div style="display:flex;flex-direction:column;gap:3rem;">
+
+        <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+          <div style="width:3rem;height:3rem;background:rgba(255,209,0,0.08);border:1px solid rgba(255,209,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span class="material-symbols-outlined" style="color:var(--accent);font-size:1.3rem;">location_on</span>
+          </div>
+          <div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;margin:0 0 0.4rem;">Ubicación</h3>
+            <p style="font-size:1.2rem;font-family:'Work Sans',sans-serif;font-weight:700;color:#fff;margin:0 0 0.15rem;">J.M. de Rosas 176</p>
+            <p style="font-size:0.9rem;color:#64748b;margin:0;">Las Parejas, Santa Fe, Argentina</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+          <div style="width:3rem;height:3rem;background:rgba(255,209,0,0.08);border:1px solid rgba(255,209,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span class="material-symbols-outlined" style="color:var(--accent);font-size:1.3rem;">call</span>
+          </div>
+          <div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;margin:0 0 0.4rem;">Teléfono</h3>
+            <a href="tel:+543471470445" style="font-size:1.2rem;font-family:'Work Sans',sans-serif;font-weight:700;color:#fff;text-decoration:none;display:block;margin-bottom:0.15rem;">03471 – 470445</a>
+            <p style="font-size:0.9rem;color:#64748b;margin:0;">Lunes a Viernes, 07:00 – 16:00 hs.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+          <div style="width:3rem;height:3rem;background:rgba(255,209,0,0.08);border:1px solid rgba(255,209,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span class="material-symbols-outlined" style="color:var(--accent);font-size:1.3rem;">mail</span>
+          </div>
+          <div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;margin:0 0 0.4rem;">Correo Electrónico</h3>
+            <a href="mailto:ventas@kadae.com.ar" style="font-size:1.1rem;font-family:'Work Sans',sans-serif;font-weight:700;color:var(--accent);text-decoration:none;">ventas@kadae.com.ar</a>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:1.5rem;align-items:flex-start;">
+          <div style="width:3rem;height:3rem;background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span class="material-symbols-outlined" style="color:#25d366;font-size:1.3rem;">chat</span>
+          </div>
+          <div>
+            <h3 style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;margin:0 0 0.4rem;">WhatsApp</h3>
+            <a href="https://api.whatsapp.com/send/?phone=%2B5493471527595" target="_blank" style="font-size:1.1rem;font-family:'Work Sans',sans-serif;font-weight:700;color:#fff;text-decoration:none;display:block;margin-bottom:0.15rem;">+54 9 3471 ­527595</a>
+            <p style="font-size:0.9rem;color:#64748b;margin:0;">Andrea — Depto. Ventas</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Map -->
+      <div style="margin-top:3rem;height:17rem;overflow:hidden;border:1px solid rgba(255,255,255,0.08);position:relative;filter:grayscale(100%) brightness(0.7);transition:filter 0.5s;" onmouseover="this.style.filter='none'" onmouseout="this.style.filter='grayscale(100%) brightness(0.7)'">
+        <img alt="Mapa Kadae S.A." style="width:100%;height:100%;object-fit:cover;" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTbK9BoJoa1ZFJ8uZYHUqgZ13Od_yODNp5AeK0wgr0R2fw5ChaFrDgHLym6JyYD-by6fxcP9QvbAU1js_QK12IYoUReGgGMq2l9Ne09Zh-Cb_XOQAit9Nolpt1ExhWuO_Inz8p6zbGxB5ibbZ7_WjTKpvUHvy-wUP6kOFCTU2uToXxRyw6OIMF9ZxYNywwgkoMPg3LyXocUBBzASWiRkIsAq1LpOvPooWTY0CslD1Xo5DWXaWcM1B9rxvoXYRjB68oIVpob7skTe8K"/>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+          <div style="background:var(--accent);padding:1rem;box-shadow:0 4px 16px rgba(0,0,0,0.5);">
+            <span class="material-symbols-outlined" style="font-size:1.8rem;color:#0f172a;display:block;">pin_drop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM PANEL (slate-800) -->
+    <div style="background:var(--bg-mid);padding:3.5rem 2.5rem 3.5rem 3.5rem;position:relative;overflow:hidden;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--accent);display:block;margin-bottom:1rem;">Formulario</span>
+      <h2 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:2rem;text-transform:uppercase;margin:0 0 0.5rem;color:#fff;">Envienos su consulta</h2>
+      <p style="font-size:0.88rem;color:#64748b;margin:0 0 2.5rem;">Le responderemos a la brevedad.</p>
+
+      <form onsubmit="handleContactSubmit(event)" style="display:flex;flex-direction:column;gap:2rem;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="form-row">
+          <div>
+            <label style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;display:block;margin-bottom:0.5rem;">Nombre Completo</label>
+            <input name="nombre" class="form-input" placeholder="Escriba su nombre..." type="text" required/>
+          </div>
+          <div>
+            <label style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;display:block;margin-bottom:0.5rem;">Email de contacto</label>
+            <input name="email" class="form-input" placeholder="ejemplo@empresa.com" type="email" required/>
+          </div>
+        </div>
+        <div>
+          <label style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;display:block;margin-bottom:0.5rem;">Teléfono (opcional)</label>
+          <input name="telefono" class="form-input" placeholder="Ej: 03471-470445" type="tel"/>
+        </div>
+        <div>
+          <label style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:#64748b;display:block;margin-bottom:0.5rem;">Mensaje o Consulta</label>
+          <textarea name="mensaje" class="form-input" placeholder="¿Cómo podemos ayudar a su empresa?" rows="5" style="resize:none;" required></textarea>
+        </div>
+        <div>
+          <button id="submitBtn" style="background:var(--accent);color:#0f172a;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;padding:1rem 2.5rem;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:0.6rem;transition:background 0.2s;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--accent)'" type="submit">
+            Enviar Mensaje <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+      </form>
+
+      <!-- Decorative -->
+      <div style="position:absolute;top:0;right:-2rem;font-family:'Work Sans',sans-serif;font-weight:900;font-size:8rem;color:#fff;opacity:0.02;pointer-events:none;user-select:none;">✉</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HR / JOIN SECTION (yellow accent) -->
+<section style="position:relative;background:var(--accent);padding:5.5rem 2.5rem;overflow:hidden;">
+  <div class="dots" style="position:absolute;right:0;top:0;width:40%;height:100%;opacity:0.15;"></div>
+  <div style="max-width:1600px;margin:0 auto;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap;">
+    <div style="max-width:640px;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.25em;color:#1e3a5f;display:block;margin-bottom:1rem;">Trabaja con Nosotros</span>
+      <h2 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3.5rem);color:#0f172a;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.1;margin:0 0 1rem;">¡Sumate al equipo<br/>de Kadae!</h2>
+      <p style="font-size:1rem;color:#1e3a5f;max-width:480px;line-height:1.7;margin:0;">Buscamos personas comprometidas con la excelencia operativa. Unite a una empresa líder en constante crecimiento.</p>
+    </div>
+    <div style="flex-shrink:0;">
+      <a href="mailto:rrhh@kadae.com.ar?subject=CV%20-%20Postulación" style="display:inline-flex;align-items:center;gap:0.75rem;background:#0f172a;color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.15em;padding:1.1rem 2.2rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background='#0f172a'">
+        Subí tu CV <span class="material-symbols-outlined">upload_file</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-footer);border-top:3px solid var(--accent);">
+  <div style="max-width:1600px;margin:0 auto;padding:4.5rem 2.5rem;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;" class="footer-grid">
+      <div>
+        <div style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.5rem;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;">Kadae S.A.</div>
+        <p style="font-size:0.88rem;color:#475569;line-height:1.75;max-width:280px;margin:0 0 1.5rem;">Fabricación de productos plásticos y transmisiones cardánicas. Industria nacional desde Las Parejas, Santa Fe.</p>
+        <a href="https://www.kadae.com.ar/cv" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(255,209,0,0.3);color:var(--accent);font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;padding:0.6rem 1rem;text-decoration:none;" onmouseover="this.style.background='rgba(255,209,0,0.08)'" onmouseout="this.style.background='transparent'">
+          <span class="material-symbols-outlined" style="font-size:0.9rem;">work</span>¡Sumate al equipo!
+        </a>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1.5rem;">Navegación</div>
+        <div style="display:flex;flex-direction:column;gap:0.8rem;">
+          <a href="index.html"         style="font-size:0.85rem;color:#475569;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'">Inicio</a>
+          <a href="quienes-somos.html" style="font-size:0.85rem;color:#475569;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'">Quiénes Somos</a>
+          <a href="productos.html"     style="font-size:0.85rem;color:#475569;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'">Productos</a>
+          <a href="contacto.html"      style="font-size:0.85rem;color:var(--accent);text-decoration:none;font-weight:700;">Contacto</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1.5rem;">Datos de contacto</div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <a href="tel:+543471470445" style="font-size:0.85rem;color:#475569;text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s;" onmouseover="this.style.color='#FFD100'" onmouseout="this.style.color='#475569'"><span class="material-symbols-outlined" style="font-size:0.9rem;">phone</span>03471 – 470445</a>
+          <a href="mailto:ventas@kadae.com.ar" style="font-size:0.85rem;color:#475569;text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s;" onmouseover="this.style.color='#FFD100'" onmouseout="this.style.color='#475569'"><span class="material-symbols-outlined" style="font-size:0.9rem;">mail</span>ventas@kadae.com.ar</a>
+          <div style="font-size:0.82rem;color:#374151;">Lun–Vie, 07:00–16:00 hs.</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.05);margin-top:3.5rem;padding-top:2rem;">
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;color:#374151;text-transform:uppercase;letter-spacing:0.15em;margin:0;">© 2026 Kadae S.A. — Las Parejas, Santa Fe, Argentina. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a id="waFab" href="https://api.whatsapp.com/send/?phone=%2B5493471527595&text=Hola.+Me+comunico+a+traves+de+la+pagina+web+Kadae+S.A.+por+la+siguiente+consulta%3A" target="_blank" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const nombre = form.querySelector('[name="nombre"]')?.value || '';
+  const email = form.querySelector('[name="email"]')?.value || '';
+  const tel = form.querySelector('[name="telefono"]')?.value || '';
+  const mensaje = form.querySelector('[name="mensaje"]')?.value || '';
+  const body = `Nombre: ${nombre}\nEmail: ${email}${tel ? '\nTeléfono: ' + tel : ''}\n\nMensaje:\n${mensaje}`;
+  window.open(`mailto:ventas@kadae.com.ar?subject=Consulta Web - ${nombre}&body=${encodeURIComponent(body)}`, '_blank');
+  const btn = document.getElementById('submitBtn');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> ¡Enviado!';
+  btn.style.background = '#16a34a';
+  btn.style.color = '#fff';
+  setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.style.color = ''; form.reset(); }, 3500);
+}
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileToggle.addEventListener('click', () => { const o = mobileMenu.classList.toggle('open'); mobileToggle.classList.toggle('open', o); });
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); mobileToggle.classList.remove('open'); }));
+const waFab = document.getElementById('waFab');
+window.addEventListener('scroll', () => waFab.classList.toggle('show', window.scrollY > 300), {passive:true});
+const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); }), {threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+// Responsive
+[['(max-width:768px)','.contact-grid','1fr','1fr 1fr'],['(max-width:768px)','.hero-grid','1fr','1fr 1fr'],['(max-width:600px)','.form-row','1fr','1fr 1fr'],['(max-width:768px)','.footer-grid','1fr','2fr 1fr 1fr']].forEach(([mqs,sel,mob,desk])=>{const mq=window.matchMedia(mqs);const el=document.querySelector(sel);const apply=m=>{if(el)el.style.gridTemplateColumns=m.matches?mob:desk;};apply(mq);mq.addEventListener('change',apply);});
+</script>
+</body>
+</html>

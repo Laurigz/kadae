@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiénes Somos | Kadae S.A.</title>
+<meta name="description" content="Conocé la trayectoria industrial de Kadae S.A. Más de 40 años fabricando productos plásticos y transmisiones cardánicas en Las Parejas, Santa Fe."/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@700;800;900&family=Public+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', sans-serif; background: #111827; color: #fff; margin: 0; }
+  h1, h2, h3, h4 { font-family: 'Work Sans', sans-serif; }
+  :root {
+    --bg-hero: #0f172a; --bg-dark: #111827; --bg-mid: #1e293b;
+    --bg-light: #f8f5f0; --bg-footer: #0d1117;
+    --accent: #FFD100; --accent-dk: #C9A800;
+  }
+  /* Navbar */
+  #navbar { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(15,23,42,0.96); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,209,0,0.15); }
+  #navbar-inner { display:flex; align-items:center; justify-content:space-between; padding:1.4rem 2.5rem; max-width:1600px; margin:0 auto; }
+  .nav-logo { font-family:'Work Sans',sans-serif; font-weight:900; font-size:1.5rem; color:var(--accent); text-decoration:none; letter-spacing:-0.02em; text-transform:uppercase; }
+  .nav-links { display:flex; gap:2.5rem; align-items:center; }
+  .nav-link { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; color:#94a3b8; text-decoration:none; transition:color 0.2s; position:relative; }
+  .nav-link:hover, .nav-link.active { color:#fff; }
+  .nav-link.active::after { content:''; position:absolute; bottom:-4px; left:0; right:0; height:2px; background:var(--accent); }
+  .nav-cta { background:var(--accent); color:#0f172a; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; padding:0.7rem 1.6rem; text-decoration:none; transition:background 0.2s; }
+  .nav-cta:hover { background:#fff; }
+  #mobileToggle { display:none; background:none; border:none; cursor:pointer; padding:0; }
+  #mobileToggle span { display:block; width:24px; height:2px; background:#fff; margin:5px 0; transition:all 0.3s; }
+  #mobileToggle.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+  #mobileToggle.open span:nth-child(2) { opacity:0; }
+  #mobileToggle.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+  #mobileMenu { max-height:0; overflow:hidden; transition:max-height 0.4s ease; background:var(--bg-hero); border-top:1px solid rgba(255,209,0,0.15); }
+  #mobileMenu.open { max-height:400px; }
+  .mob-link { display:block; padding:0.85rem 2rem; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em; color:#94a3b8; text-decoration:none; transition:color 0.2s; }
+  .mob-link:hover { color:var(--accent); }
+  .mob-cta { display:block; margin:0.75rem 2rem 1.5rem; background:var(--accent); color:#0f172a; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; padding:0.85rem; text-align:center; text-decoration:none; }
+  @media(max-width:768px) { #mobileToggle{display:block;} .nav-links,.nav-cta-wrap{display:none!important;} #navbar-inner{padding:1.1rem 1.5rem;} }
+  /* Animations */
+  .fade-up { opacity:0; transform:translateY(40px); transition:opacity 0.75s ease, transform 0.75s ease; }
+  .fade-up.in { opacity:1; transform:translateY(0); }
+  .fade-up.delay-1 { transition-delay:0.1s; }
+  .fade-up.delay-2 { transition-delay:0.2s; }
+  /* Dots */
+  .dots { background-image:radial-gradient(rgba(255,209,0,0.2) 1px, transparent 1px); background-size:28px 28px; }
+  /* WA FAB */
+  #waFab { position:fixed; bottom:1.5rem; right:1.5rem; z-index:200; width:3.5rem; height:3.5rem; border-radius:50%; background:#25d366; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 20px rgba(37,211,102,0.4); opacity:0; transform:scale(0.5); transition:opacity 0.4s, transform 0.4s; text-decoration:none; }
+  #waFab.show { opacity:1; transform:scale(1); }
+  #waFab:hover { transform:scale(1.08); }
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div id="navbar-inner">
+    <a href="index.html" class="nav-logo">Kadae S.A.</a>
+    <div class="nav-links">
+      <a href="index.html"         class="nav-link">Inicio</a>
+      <a href="quienes-somos.html" class="nav-link active">Quiénes Somos</a>
+      <a href="productos.html"     class="nav-link">Productos</a>
+      <a href="contacto.html"      class="nav-link">Contacto</a>
+    </div>
+    <div class="nav-cta-wrap"><a href="contacto.html" class="nav-cta">Solicitar Cotización</a></div>
+    <button id="mobileToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobileMenu">
+    <a href="index.html"         class="mob-link">Inicio</a>
+    <a href="quienes-somos.html" class="mob-link">Quiénes Somos</a>
+    <a href="productos.html"     class="mob-link">Productos</a>
+    <a href="contacto.html"      class="mob-link">Contacto</a>
+    <a href="contacto.html"      class="mob-cta">Solicitar Cotización</a>
+  </div>
+</nav>
+
+<main style="padding-top:82px;">
+
+<!-- HERO -->
+<section style="position:relative; height:520px; display:flex; align-items:center; overflow:hidden; background:var(--bg-hero);">
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTtuXJ1QOplgQeeycqqvqaFWac75BCoupK2ERFHupOSFxOZYolVUR6WN7UKUz6QRJuwTTEL2guhZ4Q9Dg9kpL-J0lB_YHJfREYzNw3b_YK4U8DAgNJrVxkh7RS0wzapLhQUBk-_PSwzB_Ar-XlILAwfQiGhT89GJsFBFhZKowHHH1bfE-3Stzz-TuT9Kv9_oKHNnQO9ZQ_JQRoPp87QghJ1p1K2MsPn78orgC7AXdAb5gSF4ZO3TniY9xsBODNKAyl5fGPZXsusoGx"
+         alt="Planta industrial Kadae" style="width:100%;height:100%;object-fit:cover;opacity:0.3;filter:saturate(0.4);"/>
+    <div style="position:absolute;inset:0;background:linear-gradient(110deg,rgba(15,23,42,0.98) 35%,rgba(15,23,42,0.5) 80%);"></div>
+  </div>
+  <div class="dots" style="position:absolute;right:0;top:0;width:40%;height:100%;opacity:0.25;z-index:1;"></div>
+  <div style="position:relative;z-index:2;width:100%;max-width:1600px;margin:0 auto;padding:0 2.5rem;">
+    <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--accent);display:block;margin-bottom:1rem;">Sobre Nosotros</span>
+    <h1 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:clamp(3.5rem,9vw,8rem);line-height:0.88;text-transform:uppercase;margin:0;color:#fff;letter-spacing:-0.02em;">
+      Trayectoria<br/><span style="color:var(--accent);">Industrial</span>
+    </h1>
+  </div>
+</section>
+
+<!-- HISTORIA (light section) -->
+<section style="background:#f8f5f0;padding:6rem 0;">
+  <div style="max-width:1400px;margin:0 auto;padding:0 2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;" class="about-grid">
+    <div class="fade-up">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--accent-dk);display:block;margin-bottom:1rem;">Nuestra Historia</span>
+      <h2 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3.5rem);text-transform:uppercase;color:#0f172a;letter-spacing:-0.02em;margin:0 0 2rem;line-height:1.05;">Más de 40 años<br/><span style="color:var(--accent-dk);">de Industria</span></h2>
+      <div style="width:3rem;height:3px;background:var(--accent-dk);margin-bottom:2rem;"></div>
+      <div style="font-size:1.02rem;color:#475569;line-height:1.85;display:flex;flex-direction:column;gap:1.2rem;">
+        <p style="margin:0;">Somos <strong style="color:#1e293b;">KADAE S.A.</strong>, una empresa familiar nacida en el corazón productivo de <strong style="color:#1e293b;">Las Parejas, Santa Fe</strong>. Nos dedicamos a la fabricación de productos plásticos por inyección y rotomoldeo, y transmisiones cardánicas.</p>
+        <p style="margin:0;">Con más de 40 años en el mercado, fuimos uno de los pioneros en aplicar el plástico a la agroindustria argentina. Hoy proveemos a industrias frigoríficas, lechera, alimenticia, de acoplados, iluminación, señalética y más.</p>
+        <p style="margin:0;">Contamos con una sala de matricería propia equipada con maquinaria de avanzada tecnología, lo que nos permite ofrecer soluciones integrales y a medida para nuestros clientes.</p>
+      </div>
+    </div>
+    <div class="fade-up delay-1" style="position:relative;">
+      <div style="position:absolute;top:-1.5rem;left:-1.5rem;width:5rem;height:5rem;background:var(--accent);z-index:0;"></div>
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqV2vcw1p7RdsYnmEdMCqdt_qXXs9qrcj3ycwIrUzJNTDBHEKwlfj4InpMuss_SzMJ0qQBrHtJYH5pflMf35DTXPCsN7WSjL53SBgyMOfERReDVcR9WrwDRqmh1AsH1jX5ph64uVI4OuaXWmh8MCp7UoimbJpNIujGnYx0kiIUz-KBosSpSw0KUob2qB120bYRbx4EeQwjqw5ozbnOK722L7SoB4Po0nmPT_6OrY42lYIZq1XvCYk-H2GylKW87k87vEmQZNRi23IA"
+           alt="Equipo Kadae S.A." style="position:relative;z-index:1;width:100%;aspect-ratio:1;object-fit:cover;filter:saturate(0.8);"/>
+      <div style="position:absolute;bottom:-1.5rem;right:-1.5rem;z-index:2;background:var(--accent);padding:2rem 2.5rem;">
+        <div style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:3.5rem;color:#0f172a;line-height:1;">40</div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:#0f172a;margin-top:0.25rem;">Años<br/>liderando</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISIÓN Y VISIÓN (slate-800) -->
+<section style="background:var(--bg-mid);padding:6rem 0;">
+  <div style="max-width:1400px;margin:0 auto;padding:0 2.5rem;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--accent);display:block;margin-bottom:1rem;">Propósito</span>
+      <h2 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3.5rem);text-transform:uppercase;margin:0;letter-spacing:-0.02em;">Misión <span style="color:var(--accent);">&</span> Visión</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="mv-grid">
+      <div class="fade-up" style="background:#111827;padding:3rem;border-top:3px solid var(--accent);position:relative;overflow:hidden;">
+        <span class="material-symbols-outlined" style="font-size:3rem;color:var(--accent);display:block;margin-bottom:1.5rem;">factory</span>
+        <h3 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.8rem;text-transform:uppercase;margin:0 0 1.2rem;color:#fff;">Misión</h3>
+        <p style="font-size:1rem;color:#94a3b8;line-height:1.8;margin:0;">Fabricar productos plásticos y transmisiones cardánicas de la más alta calidad, con tecnología de vanguardia y compromiso con la industria nacional argentina, garantizando soluciones integrales para nuestros clientes.</p>
+        <div style="position:absolute;right:-2rem;bottom:-2rem;opacity:0.04;pointer-events:none;"><span class="material-symbols-outlined" style="font-size:10rem;">factory</span></div>
+      </div>
+      <div class="fade-up delay-1" style="background:#111827;padding:3rem;border-top:3px solid var(--accent);position:relative;overflow:hidden;">
+        <span class="material-symbols-outlined" style="font-size:3rem;color:var(--accent);display:block;margin-bottom:1.5rem;">visibility</span>
+        <h3 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.8rem;text-transform:uppercase;margin:0 0 1.2rem;color:#fff;">Visión</h3>
+        <p style="font-size:1rem;color:#94a3b8;line-height:1.8;margin:0;">Consolidarnos como referentes nacionales en fabricación de plásticos y transmisiones, reconocidos por nuestra calidad, innovación constante y atención personalizada al cliente.</p>
+        <div style="position:absolute;right:-2rem;bottom:-2rem;opacity:0.04;pointer-events:none;"><span class="material-symbols-outlined" style="font-size:10rem;">visibility</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES (light) -->
+<section style="background:#f8f5f0;padding:6rem 0;">
+  <div style="max-width:1400px;margin:0 auto;padding:0 2.5rem;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;flex-wrap:wrap;gap:1.5rem;">
+      <div>
+        <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.25em;color:var(--accent-dk);display:block;margin-bottom:1rem;">Lo que nos define</span>
+        <h2 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:clamp(2rem,4vw,3.5rem);text-transform:uppercase;color:#0f172a;margin:0;letter-spacing:-0.02em;">Nuestros<br/><span style="color:var(--accent-dk);">Valores</span></h2>
+      </div>
+      <div style="width:4rem;height:3px;background:var(--accent-dk);"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid rgba(15,23,42,0.12);" class="valores-grid">
+
+      <div class="fade-up valor-card" style="padding:3rem;border-right:1px solid rgba(15,23,42,0.1);transition:background 0.4s;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:0.75rem;color:#94a3b8;display:block;margin-bottom:2rem;">01</span>
+        <span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--accent-dk);display:block;margin-bottom:1rem;">handshake</span>
+        <h4 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.5rem;text-transform:uppercase;color:#0f172a;margin:0 0 1rem;">Compromiso</h4>
+        <p style="font-size:0.9rem;color:#64748b;line-height:1.7;margin:0;">Integridad en cada producto y proceso. Más de 40 años cosechando clientes y amigos.</p>
+      </div>
+
+      <div class="fade-up delay-1 valor-card" style="padding:3rem;border-right:1px solid rgba(15,23,42,0.1);transition:background 0.4s;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:0.75rem;color:#94a3b8;display:block;margin-bottom:2rem;">02</span>
+        <span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--accent-dk);display:block;margin-bottom:1rem;">verified</span>
+        <h4 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.5rem;text-transform:uppercase;color:#0f172a;margin:0 0 1rem;">Calidad</h4>
+        <p style="font-size:0.9rem;color:#64748b;line-height:1.7;margin:0;">Control riguroso en cada etapa de producción con maquinaria de avanzada tecnología.</p>
+      </div>
+
+      <div class="fade-up delay-2 valor-card" style="padding:3rem;transition:background 0.4s;">
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:0.75rem;color:#94a3b8;display:block;margin-bottom:2rem;">03</span>
+        <span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--accent-dk);display:block;margin-bottom:1rem;">lightbulb</span>
+        <h4 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.5rem;text-transform:uppercase;color:#0f172a;margin:0 0 1rem;">Innovación</h4>
+        <p style="font-size:0.9rem;color:#64748b;line-height:1.7;margin:0;">Pioneros en aplicar plástico a la agroindustria, siempre a la vanguardia tecnológica.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BANNER OSCURO -->
+<section style="position:relative;background:var(--bg-hero);padding:7rem 2.5rem;overflow:hidden;text-align:center;">
+  <div style="position:absolute;inset:0;opacity:0.18;">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQYE0I25rwR6UHBAfbwwpT07AQHt0ERSsI9II_Y2tuP0j9NsDpHYvtbGgRSjAWwLlLYmi0mA1DIfrA9is2yelP9r5_quSoqlOODPaIoJNm1frYYMUYm67GgFFdIWgayEF_90xV0_BVZ9ZN0WT0EEfSZd_gE1bgbrqfMcueqe58MEjxtcXCncEL3WVzFsvM6aRqP_Z5FQrJBWnaAxi8bomVtqITsUIt_23AiYtvlJwxIshmaj8WR5_Vc1vwxz4ECBS-Mh72mZEsVBO-" style="width:100%;height:100%;object-fit:cover;"/>
+  </div>
+  <div class="dots" style="position:absolute;inset:0;opacity:0.2;z-index:1;"></div>
+  <div style="position:relative;z-index:2;max-width:800px;margin:0 auto;">
+    <h2 style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:#fff;letter-spacing:-0.02em;margin:0 0 1.5rem;line-height:1.05;">Industria <span style="color:var(--accent);">Nacional</span></h2>
+    <p style="font-size:1.1rem;color:#94a3b8;margin:0 0 3rem;line-height:1.7;max-width:540px;margin-left:auto;margin-right:auto;">Cada pieza que fabricamos lleva el sello de la calidad argentina. Desde Las Parejas para todo el país.</p>
+    <div style="display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+        <span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--accent);">precision_manufacturing</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:#64748b;">Matricería</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+        <span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--accent);">factory</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:#64748b;">Producción</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0.75rem;">
+        <span class="material-symbols-outlined" style="font-size:2.5rem;color:var(--accent);">local_shipping</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:#64748b;">Distribución</span>
+      </div>
+    </div>
+    <div style="margin-top:3rem;">
+      <a href="contacto.html" style="display:inline-flex;align-items:center;gap:0.6rem;background:var(--accent);color:#0f172a;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.12em;padding:1rem 2.2rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#fff'" onmouseout="this.style.background='var(--accent)'">
+        Contactar ahora <span class="material-symbols-outlined" style="font-size:1.1rem;">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer style="background:var(--bg-footer);border-top:3px solid var(--accent);">
+  <div style="max-width:1600px;margin:0 auto;padding:4.5rem 2.5rem;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;" class="footer-grid">
+      <div>
+        <div style="font-family:'Work Sans',sans-serif;font-weight:900;font-size:1.5rem;color:var(--accent);text-transform:uppercase;margin-bottom:1.2rem;">Kadae S.A.</div>
+        <p style="font-size:0.88rem;color:#475569;line-height:1.75;max-width:280px;margin:0 0 1.5rem;">Fabricación de productos plásticos y transmisiones cardánicas. Industria nacional desde Las Parejas, Santa Fe.</p>
+        <a href="https://www.kadae.com.ar/cv" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;border:1px solid rgba(255,209,0,0.3);color:var(--accent);font-family:'Space Grotesk',sans-serif;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;padding:0.6rem 1rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(255,209,0,0.08)'" onmouseout="this.style.background='transparent'">
+          <span class="material-symbols-outlined" style="font-size:0.9rem;">work</span>¡Sumate al equipo!
+        </a>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1.5rem;">Navegación</div>
+        <div style="display:flex;flex-direction:column;gap:0.8rem;">
+          <a href="index.html"         style="font-size:0.85rem;color:#475569;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'">Inicio</a>
+          <a href="quienes-somos.html" style="font-size:0.85rem;color:#FFD100;text-decoration:none;font-weight:700;">Quiénes Somos</a>
+          <a href="productos.html"     style="font-size:0.85rem;color:#475569;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'">Productos</a>
+          <a href="contacto.html"      style="font-size:0.85rem;color:#475569;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'">Contacto</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:var(--accent);margin-bottom:1.5rem;">Contacto</div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <a href="tel:+543471470445" style="font-size:0.85rem;color:#475569;text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s;" onmouseover="this.style.color='#FFD100'" onmouseout="this.style.color='#475569'"><span class="material-symbols-outlined" style="font-size:0.9rem;">phone</span>03471 – 470445</a>
+          <a href="mailto:ventas@kadae.com.ar" style="font-size:0.85rem;color:#475569;text-decoration:none;display:flex;align-items:center;gap:0.4rem;transition:color 0.2s;" onmouseover="this.style.color='#FFD100'" onmouseout="this.style.color='#475569'"><span class="material-symbols-outlined" style="font-size:0.9rem;">mail</span>ventas@kadae.com.ar</a>
+          <div style="font-size:0.82rem;color:#374151;">Lun–Vie, 07:00–16:00 hs.</div>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.05);margin-top:3.5rem;padding-top:2rem;">
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:0.65rem;color:#374151;text-transform:uppercase;letter-spacing:0.15em;margin:0;">© 2026 Kadae S.A. — Las Parejas, Santa Fe, Argentina. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<a id="waFab" href="https://api.whatsapp.com/send/?phone=%2B5493471527595&text=Hola.+Me+comunico+a+traves+de+la+pagina+web+Kadae+S.A.+por+la+siguiente+consulta%3A" target="_blank" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60), {passive:true});
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+mobileToggle.addEventListener('click', () => { const o = mobileMenu.classList.toggle('open'); mobileToggle.classList.toggle('open', o); });
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); mobileToggle.classList.remove('open'); }));
+const waFab = document.getElementById('waFab');
+window.addEventListener('scroll', () => waFab.classList.toggle('show', window.scrollY > 300), {passive:true});
+const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); }), {rootMargin:'0px 0px -60px 0px', threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+// Responsive grids
+[['(max-width:900px)','.about-grid','1fr','1fr 1fr'],['(max-width:768px)','.mv-grid','1fr','1fr 1fr'],['(max-width:900px)','.valores-grid','1fr','repeat(3,1fr)'],['(max-width:768px)','.footer-grid','1fr','2fr 1fr 1fr']].forEach(([mqs,sel,mob,desk])=>{const mq=window.matchMedia(mqs);const el=document.querySelector(sel);const apply=m=>{if(el)el.style.gridTemplateColumns=m.matches?mob:desk;};apply(mq);mq.addEventListener('change',apply);});
+// Hover on valores cards
+document.querySelectorAll('.valor-card').forEach(c=>{c.addEventListener('mouseenter',()=>{c.style.background='rgba(255,209,0,0.06)';});c.addEventListener('mouseleave',()=>{c.style.background='';});});
+</script>
+</body>
+</html>

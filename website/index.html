@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kadae S.A. | Plásticos y Transmisiones Cardánicas — Las Parejas, Santa Fe</title>
+<meta name="description" content="Kadae S.A. — Más de 40 años fabricando productos plásticos por inyección y rotomoldeo, y transmisiones cardánicas. Industria nacional argentina."/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;0,800;0,900;1,900&family=Public+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Public Sans', sans-serif; background: #111827; color: #fff; margin: 0; }
+  h1, h2, h3, h4 { font-family: 'Work Sans', sans-serif; }
+
+  /* ── Color tokens ── */
+  :root {
+    --bg-hero:    #0f172a;   /* deep navy */
+    --bg-dark:    #111827;   /* slate-900 */
+    --bg-mid:     #1e293b;   /* slate-800 */
+    --bg-light:   #f8f5f0;   /* warm off-white */
+    --bg-footer:  #0d1117;   /* near-black */
+    --accent:     #FFD100;
+    --accent-dk:  #C9A800;
+    --text-muted: #94a3b8;
+    --text-light: #64748b;
+  }
+
+  /* ── Navbar ── */
+  #navbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
+    background: transparent; border-bottom: 1px solid transparent;
+  }
+  #navbar.scrolled {
+    background: rgba(15,23,42,0.96);
+    backdrop-filter: blur(14px);
+    border-bottom-color: rgba(255,209,0,0.15);
+  }
+  #navbar-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 2.5rem; max-width: 1600px; margin: 0 auto;
+  }
+  .nav-logo {
+    font-family: 'Work Sans', sans-serif; font-weight: 900;
+    font-size: 1.5rem; color: var(--accent); text-decoration: none;
+    letter-spacing: -0.02em; text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-link {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+    color: #94a3b8; text-decoration: none; transition: color 0.2s; position: relative;
+  }
+  .nav-link:hover, .nav-link.active { color: #fff; }
+  .nav-link.active::after {
+    content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
+    height: 2px; background: var(--accent);
+  }
+  .nav-cta {
+    background: var(--accent); color: #0f172a;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em;
+    padding: 0.7rem 1.6rem; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-cta:hover { background: #fff; }
+  .nav-cta:active { transform: scale(0.97); }
+
+  /* ── Language switcher ── */
+  .lang-switcher {
+    display: flex; align-items: center; gap: 0;
+    border: 1px solid rgba(255,255,255,0.15); margin-left: 1.5rem;
+  }
+  .lang-btn {
+    background: none; border: none; cursor: pointer; padding: 0.38rem 0.6rem;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.65rem;
+    text-transform: uppercase; letter-spacing: 0.08em; color: #64748b;
+    transition: color 0.2s, background 0.2s; white-space: nowrap;
+  }
+  .lang-btn:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .lang-btn:hover { color: #fff; background: rgba(255,255,255,0.06); }
+  .lang-btn.active { color: var(--accent); background: rgba(255,209,0,0.08); }
+
+  /* ── Mobile Menu ── */
+  #mobileToggle { display: none; background: none; border: none; cursor: pointer; padding: 0; }
+  #mobileToggle span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; transition: all 0.3s; }
+  #mobileToggle.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  #mobileToggle.open span:nth-child(2) { opacity: 0; }
+  #mobileToggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+  #mobileMenu {
+    max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+    background: var(--bg-hero); border-top: 1px solid rgba(255,209,0,0.15);
+  }
+  #mobileMenu.open { max-height: 600px; }
+  .mob-link {
+    display: block; padding: 0.85rem 2rem;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+    color: #94a3b8; text-decoration: none; transition: color 0.2s;
+  }
+  .mob-link:hover { color: var(--accent); }
+  .mob-cta {
+    display: block; margin: 0.75rem 2rem 1.5rem;
+    background: var(--accent); color: #0f172a;
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em;
+    padding: 0.85rem; text-align: center; text-decoration: none;
+  }
+  .mob-lang { display: flex; gap: 0; margin: 0 2rem 1rem; border: 1px solid rgba(255,255,255,0.1); width: fit-content; }
+  .mob-lang .lang-btn { font-size: 0.7rem; padding: 0.5rem 0.8rem; }
+  @media (max-width: 768px) {
+    #mobileToggle { display: block; }
+    .nav-links, .nav-cta-wrap { display: none !important; }
+    #navbar-inner { padding: 1.1rem 1.5rem; }
+  }
+
+  /* ── Animations ── */
+  .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.75s ease, transform 0.75s ease; }
+  .fade-up.in { opacity: 1; transform: translateY(0); }
+  .fade-up.delay-1 { transition-delay: 0.1s; }
+  .fade-up.delay-2 { transition-delay: 0.2s; }
+  .fade-up.delay-3 { transition-delay: 0.3s; }
+
+  /* ── Dot pattern overlay ── */
+  .dots { background-image: radial-gradient(rgba(255,209,0,0.2) 1px, transparent 1px); background-size: 28px 28px; }
+
+  /* ── Section labels ── */
+  .section-label {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.25em;
+    color: var(--accent); margin-bottom: 1rem; display: block;
+  }
+  .section-label.dark { color: #C9A800; }
+
+  /* ── Product Cards (dark) ── */
+  .prod-card {
+    position: relative; overflow: hidden; display: block; text-decoration: none;
+    background: #1e293b;
+  }
+  .prod-card img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.7s ease, opacity 0.4s; opacity: 0.5;
+  }
+  .prod-card:hover img { transform: scale(1.06); opacity: 0.35; }
+  .prod-card-content {
+    position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 2.5rem;
+    background: linear-gradient(to top, rgba(15,23,42,0.9) 40%, transparent 100%);
+  }
+  .prod-card:hover .prod-card-arrow { transform: translateX(6px); }
+  .prod-card-arrow { transition: transform 0.3s; }
+
+  /* ── Stats ── */
+  .stat-num {
+    font-family: 'Work Sans', sans-serif; font-weight: 900;
+    font-size: clamp(3rem, 6vw, 5rem); line-height: 1; color: var(--accent);
+  }
+
+  /* ── Sector tags (on light bg) ── */
+  .sector-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    border: 1px solid rgba(15,23,42,0.15); padding: 0.6rem 1.2rem;
+    font-family: 'Space Grotesk'; font-weight: 600; font-size: 0.78rem;
+    text-transform: uppercase; letter-spacing: 0.1em; color: #475569;
+    white-space: nowrap; transition: border-color 0.25s, color 0.25s, background 0.25s; cursor: default;
+  }
+  .sector-tag:hover { border-color: var(--accent-dk); color: #1e293b; background: rgba(201,168,0,0.08); }
+  .sector-dot { width: 6px; height: 6px; background: var(--accent-dk); border-radius: 50%; flex-shrink: 0; }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.6rem; background: var(--accent); color: #0f172a;
+    font-family: 'Space Grotesk'; font-weight: 700; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.12em; padding: 1rem 2.2rem; text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #fff; }
+  .btn-primary:active { transform: scale(0.97); }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    border: 2px solid rgba(255,255,255,0.3); color: #fff;
+    font-family: 'Space Grotesk'; font-weight: 700; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.12em; padding: 1rem 2.2rem; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-outline-dark {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    border: 2px solid rgba(15,23,42,0.4); color: #1e293b;
+    font-family: 'Space Grotesk'; font-weight: 700; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 0.12em; padding: 1rem 2.2rem; text-decoration: none;
+    transition: border-color 0.2s, background 0.2s, color 0.2s;
+  }
+  .btn-outline-dark:hover { border-color: #0f172a; background: #0f172a; color: #fff; }
+
+  /* ── WA FAB ── */
+  #waFab {
+    position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200;
+    width: 3.5rem; height: 3.5rem; border-radius: 50%;
+    background: #25d366; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    opacity: 0; transform: scale(0.5);
+    transition: opacity 0.4s, transform 0.4s, box-shadow 0.2s; text-decoration: none;
+  }
+  #waFab.show { opacity: 1; transform: scale(1); }
+  #waFab:hover { box-shadow: 0 6px 28px rgba(37,211,102,0.6); transform: scale(1.08); }
+
+  /* ── About section (light) ── */
+  .about-section { background: var(--bg-light); }
+  .about-section .section-label { color: var(--accent-dk); }
+  .about-section h2 { color: #0f172a; }
+  .about-section p { color: #475569; }
+  .about-section strong { color: #1e293b; }
+  .about-section .pillar-title { color: #1e293b; }
+  .about-section .pillar-desc { color: #64748b; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ NAVBAR ═══════════ -->
+<nav id="navbar">
+  <div id="navbar-inner">
+    <a href="index.html" class="nav-logo">Kadae S.A.</a>
+    <div class="nav-links">
+      <a href="index.html"         class="nav-link active" data-i18n="nav_inicio">Inicio</a>
+      <a href="quienes-somos.html" class="nav-link"        data-i18n="nav_quienes">Quiénes Somos</a>
+      <a href="productos.html"     class="nav-link"        data-i18n="nav_productos">Productos</a>
+      <a href="contacto.html"      class="nav-link"        data-i18n="nav_contacto">Contacto</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn"        data-lang="en">EN</button>
+        <button class="lang-btn"        data-lang="pt">PT</button>
+      </div>
+    </div>
+    <div class="nav-cta-wrap">
+      <a href="contacto.html" class="nav-cta" data-i18n="nav_cta">Solicitar Cotización</a>
+    </div>
+    <button id="mobileToggle" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobileMenu">
+    <a href="index.html"         class="mob-link" data-i18n="nav_inicio">Inicio</a>
+    <a href="quienes-somos.html" class="mob-link" data-i18n="nav_quienes">Quiénes Somos</a>
+    <a href="productos.html"     class="mob-link" data-i18n="nav_productos">Productos</a>
+    <a href="contacto.html"      class="mob-link" data-i18n="nav_contacto">Contacto</a>
+    <div class="mob-lang">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn"        data-lang="en">EN</button>
+      <button class="lang-btn"        data-lang="pt">PT</button>
+    </div>
+    <a href="contacto.html" class="mob-cta" data-i18n="nav_cta">Solicitar Cotización</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ═══════════ HERO  (deep navy) ═══════════ -->
+<section style="position:relative; height:100vh; min-height:640px; display:flex; align-items:center; overflow:hidden; background:var(--bg-hero);">
+  <div style="position:absolute; inset:0; z-index:0;">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPcjMutP7f9aiQeYq83nW45Nl35PDes-rrx5CBjtX-wHE6XO57zZ2QgsUtmH_jiQk64g0sBCYr2IcBZOmM0kS4y_C3aCDiSkYodMDE_ktKPgcYpy091GJqXKWHD4fsJdWbxjk9cNpyni_XCAPWVM7UoWHklB9VPqyOMlQwWL_Hd4kSusUe2JA9A6RNosafo4PgR5gMtXx1icRWp79ZMIQDslgMFy_V2lrZBtlLPZ4VRbL11SQILkMCqT4CfMDikRx38BdWnW4MGU4U"
+         alt="Planta industrial Kadae S.A."
+         style="width:100%; height:100%; object-fit:cover; opacity:0.32; filter:saturate(0.5) hue-rotate(200deg);"/>
+    <div style="position:absolute; inset:0; background:linear-gradient(110deg, rgba(15,23,42,0.98) 30%, rgba(15,23,42,0.6) 70%, rgba(15,23,42,0.15) 100%);"></div>
+    <div style="position:absolute; bottom:0; left:0; right:0; height:200px; background:linear-gradient(to top, var(--bg-dark), transparent);"></div>
+  </div>
+  <div class="dots" style="position:absolute; right:0; top:0; width:38%; height:100%; opacity:0.3; z-index:1;"></div>
+
+  <div style="position:relative; z-index:2; width:100%; max-width:1600px; margin:0 auto; padding:0 2.5rem; padding-top:6rem;">
+    <span class="section-label" data-i18n="hero_label">Industria Nacional — Las Parejas, Santa Fe</span>
+    <h1 style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:clamp(3.5rem,9vw,8.5rem); line-height:0.88; text-transform:uppercase; margin:0 0 1.5rem; color:#fff; letter-spacing:-0.02em;">
+      KADAE<br/>
+      <span style="color:var(--accent);" data-i18n="hero_h1_line2">PLÁSTICOS</span><br/>
+      <span style="font-style:italic; color:#64748b;" data-i18n="hero_h1_line3">Y CARDANES.</span>
+    </h1>
+    <p style="font-family:'Public Sans',sans-serif; font-weight:300; font-size:clamp(1rem,1.8vw,1.3rem); color:#94a3b8; max-width:520px; line-height:1.7; margin-bottom:2.5rem;">
+      <span data-i18n="hero_desc">Más de </span><strong style="color:#fff; font-weight:600;">40 <span data-i18n="hero_years">años</span></strong> <span data-i18n="hero_desc2">fabricando productos plásticos por inyección y rotomoldeo, y transmisiones cardánicas de calidad nacional.</span>
+    </p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="productos.html" class="btn-primary">
+        <span data-i18n="hero_cta1">Ver Productos</span>
+        <span class="material-symbols-outlined" style="font-size:1.1rem;">arrow_forward</span>
+      </a>
+      <a href="contacto.html" class="btn-outline" data-i18n="hero_cta2">Solicitar Cotización</a>
+    </div>
+    <div style="position:absolute; bottom:-4rem; left:2.5rem; display:flex; align-items:center; gap:0.75rem; opacity:0.4;">
+      <div style="width:1px; height:3rem; background:linear-gradient(to bottom, transparent, var(--accent));"></div>
+      <span style="font-family:'Space Grotesk',sans-serif; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--accent);">Scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ STATS BAR (slate-800 — variante del hero) ═══════════ -->
+<section style="background:var(--bg-mid); border-top:1px solid rgba(255,209,0,0.15); border-bottom:1px solid rgba(255,209,0,0.08);">
+  <div style="max-width:1600px; margin:0 auto; padding:4rem 2.5rem; display:grid; grid-template-columns:repeat(3,1fr); gap:2rem;">
+
+    <div class="fade-up" style="border-left:3px solid var(--accent); padding-left:2rem;">
+      <div class="stat-num">40+</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.18em; color:#64748b; margin-top:0.5rem;" data-i18n="stat1">Años en el Mercado</div>
+    </div>
+
+    <div class="fade-up delay-1" style="border-left:3px solid var(--accent); padding-left:2rem;">
+      <div class="stat-num">800+</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.18em; color:#64748b; margin-top:0.5rem;" data-i18n="stat2">Productos en Catálogo</div>
+    </div>
+
+    <div class="fade-up delay-2" style="border-left:3px solid var(--accent); padding-left:2rem;">
+      <div class="stat-num">100%</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.18em; color:#64748b; margin-top:0.5rem;" data-i18n="stat3">Envíos a todo el País</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ PRODUCTOS (slate-900 — oscuro pero no negro) ═══════════ -->
+<section style="background:var(--bg-dark); padding:6rem 0;">
+  <div style="max-width:1600px; margin:0 auto; padding:0 2.5rem;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; flex-wrap:wrap; gap:1.5rem;">
+      <div>
+        <span class="section-label" data-i18n="prod_label">Catálogo Técnico</span>
+        <h2 style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:clamp(2.5rem,5vw,4.5rem); text-transform:uppercase; letter-spacing:-0.02em; margin:0; line-height:1;">
+          <span data-i18n="prod_h2a">Nuestros</span><br/><span style="color:var(--accent);" data-i18n="prod_h2b">Productos</span>
+        </h2>
+      </div>
+      <a href="productos.html" style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:3px; white-space:nowrap; align-self:flex-end;" data-i18n="prod_see_all">Ver catálogo completo →</a>
+    </div>
+
+    <!-- Bento grid -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; grid-template-rows:480px 320px; gap:1rem;">
+
+      <!-- Card 1: Plásticos por Inyección -->
+      <a href="productos.html#inyeccion" class="prod-card fade-up" style="grid-column:1; grid-row:1;">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJJe_bLgTAj8GVgSnYMw7VZIIXvu59ekxJBnXjYXab67Xg9jvUAkYHK41JlHXmCjxu-GjwX1Z54UuUQr6BvL9gFcZd4qSxI69hgTiOxyAU0zP-oMEeiYx5J1zxaBdeKn8GhscQ82wv3mSn0wXc8XVPHqTrsi57kZJksBJHKEgpZOKkcBjCoUrjN0itGKNnE35TKQ63ORbVTuV-VK3tS7aHOAQ7LyAy5zxTvysjDlD37zcbbUVkE4onDinqorGYSz76tI04IRAycY7c" alt="Plásticos por inyección Kadae"/>
+        <div class="prod-card-content">
+          <span style="font-family:'Space Grotesk',sans-serif; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--accent); margin-bottom:0.5rem;" data-i18n="card1_label">01 — Plásticos</span>
+          <h3 style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:clamp(1.8rem,3vw,2.8rem); text-transform:uppercase; margin:0 0 0.75rem; line-height:1;" data-i18n="card1_title">Inyección</h3>
+          <p style="font-size:0.9rem; color:#94a3b8; margin-bottom:1.2rem; max-width:320px;" data-i18n="card1_desc">Componentes termoplásticos de precisión para aplicaciones agrícolas e industriales.</p>
+          <div style="display:flex; align-items:center; gap:0.5rem; color:var(--accent); font-family:'Space Grotesk',sans-serif; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em;">
+            <span data-i18n="card_cta">Ver productos</span> <span class="material-symbols-outlined prod-card-arrow" style="font-size:1.1rem;">arrow_forward</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2: Cardanes (gradient slate/navy) -->
+      <a href="productos.html#cardanes" class="prod-card fade-up delay-1" style="grid-column:2; grid-row:1; background:linear-gradient(135deg,#1e293b 0%,#1a2035 100%);">
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:space-between; padding:2.5rem; z-index:2;">
+          <div>
+            <span class="material-symbols-outlined" style="font-size:3.5rem; color:var(--accent); display:block; margin-bottom:1.5rem;">settings_input_component</span>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.2em; color:#64748b; margin-bottom:0.5rem; display:block;" data-i18n="card2_label">02 — Transmisiones</span>
+            <h3 style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:clamp(2rem,3.5vw,3.2rem); text-transform:uppercase; margin:0 0 0.75rem; line-height:1; color:#fff;" data-i18n="card2_title">Cardanes</h3>
+            <p style="font-size:0.9rem; color:#64748b; max-width:280px; line-height:1.6;" data-i18n="card2_desc">Sistemas de transmisión de potencia diseñados para durabilidad extrema en condiciones de trabajo exigentes.</p>
+          </div>
+          <div>
+            <div style="width:100%; height:1px; background:rgba(255,209,0,0.18); margin-bottom:1.5rem;"></div>
+            <span style="display:flex; align-items:center; gap:0.5rem; font-family:'Space Grotesk',sans-serif; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent);">
+              <span data-i18n="card_see_catalog">Ver catálogo</span> <span class="material-symbols-outlined prod-card-arrow" style="font-size:1.1rem;">arrow_forward</span>
+            </span>
+          </div>
+        </div>
+        <div style="position:absolute; right:-3rem; bottom:-3rem; opacity:0.05; pointer-events:none;">
+          <span class="material-symbols-outlined" style="font-size:16rem; line-height:1;">settings</span>
+        </div>
+      </a>
+
+      <!-- Card 3: Rotomoldeo — full width -->
+      <a href="productos.html#rotomoldeo" class="prod-card fade-up delay-2" style="grid-column:1/3; grid-row:2;">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcg_T57hTZw70EP5h4lkY4NYrgI8oa5YJ_qbarMcef3eta45A-XPpxdeErREljSm323sgT8_MyZBHrWRlLxlBudFECvhI4XCZSU7IdJH8BL7Dcz0BTqxykw1_jHGD7gso_NFps6IPAPdA9E2siq-_AW1dtW5dsgFONBGigDOatrQ7KbpEJDkUcfCRY7-RcmjrwWZegNsj5MP7meRl3NzrfUDJ8dnG4TL3UB7_oIwjf3ueHaDpvED-_N-Y2s7Ljq14bz5hpRHTDMwvF" alt="Rotomoldeo Kadae"/>
+        <div class="prod-card-content" style="flex-direction:row; align-items:flex-end; justify-content:space-between;">
+          <div>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.2em; color:var(--accent); margin-bottom:0.5rem; display:block;" data-i18n="card3_label">03 — Plásticos</span>
+            <h3 style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:clamp(1.8rem,3.5vw,3rem); text-transform:uppercase; margin:0; line-height:1;" data-i18n="card3_title">Rotomoldeo</h3>
+            <p style="font-size:0.9rem; color:#94a3b8; margin-top:0.75rem; max-width:400px;" data-i18n="card3_desc">Piezas de gran volumen y formas complejas con espesores de pared uniformes para diversas industrias.</p>
+          </div>
+          <span style="border:2px solid var(--accent); color:var(--accent); font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; padding:0.75rem 1.5rem; white-space:nowrap; flex-shrink:0;" data-i18n="card_see_catalog">Ver Catálogo</span>
+        </div>
+      </a>
+
+    </div><!-- /bento grid -->
+  </div>
+</section>
+
+<!-- ═══════════ INDUSTRIAS (cálido — crema/off-white) ═══════════ -->
+<section class="about-section" style="padding:5rem 0;">
+  <div style="max-width:1600px; margin:0 auto; padding:0 2.5rem;">
+    <div style="margin-bottom:2.5rem;">
+      <span class="section-label dark" data-i18n="industry_label">Sectores que atendemos</span>
+      <h2 style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:clamp(1.8rem,3vw,2.8rem); text-transform:uppercase; margin:0; letter-spacing:-0.01em; color:#0f172a;" data-i18n="industry_h2">Industrias que servimos</h2>
+    </div>
+    <div class="fade-up" style="display:flex; flex-wrap:wrap; gap:0.75rem;">
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec1">Agroindustria</span></div>
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec2">Frigorífica</span></div>
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec3">Lechera</span></div>
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec4">Alimenticia</span></div>
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec5">Acoplados</span></div>
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec6">Iluminación</span></div>
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec7">Señalética</span></div>
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec8">Automotriz</span></div>
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec9">Agrícola</span></div>
+      <div class="sector-tag"><span class="sector-dot"></span><span data-i18n="sec10">Construcción</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SOBRE KADAE (off-white cálido) ═══════════ -->
+<section class="about-section" style="padding:7rem 0; overflow:hidden; border-top:1px solid rgba(15,23,42,0.08);">
+  <div style="max-width:1600px; margin:0 auto; padding:0 2.5rem; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center;">
+
+    <!-- Image side -->
+    <div class="fade-up" style="position:relative;">
+      <div style="position:absolute; top:-1.5rem; left:-1.5rem; width:5rem; height:5rem; background:var(--accent); z-index:0;"></div>
+      <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSwM1ST6-CeF2qFxkomvGTqJ72dOjAc8l5IFCS0pwRHRIOLABuBbh27emL7Cvl_kLzAKdFFj6L_9dw3JT18HMPv4qvnparZElwuas9x3axYCc_mYvawRHyEYEU87d94Jmvzs2OXqFZVz2dcm7MtJuO9-yYkYmnAIAU4g9JOUWSfvGvGB8O5rESP4WeO6_LwsNCaWxqJjXlFtyKjvC4K2LYPT4QQeoYRxqby-RH0AUhJEaaFwy3Yk983OWyyaiY3Y2Rb9vWFXc9yYVH"
+           alt="Planta Kadae S.A."
+           style="position:relative; z-index:1; width:100%; height:520px; object-fit:cover; filter:saturate(0.8);"/>
+      <div style="position:absolute; bottom:-1.5rem; right:-1.5rem; z-index:2; background:var(--accent); padding:2rem 2.5rem;">
+        <div style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:3.5rem; color:#0f172a; line-height:1;">40</div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.12em; color:#0f172a; margin-top:0.25rem;" data-i18n="badge_years">Años<br/>liderando</div>
+      </div>
+    </div>
+
+    <!-- Text side -->
+    <div class="fade-up delay-1">
+      <span class="section-label dark" data-i18n="about_label">Sobre Kadae S.A.</span>
+      <h2 style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:clamp(2rem,3.5vw,3.2rem); text-transform:uppercase; letter-spacing:-0.02em; margin:0 0 2rem; line-height:1.05; color:#0f172a;">
+        <span data-i18n="about_h2a">Líderes en</span><br/><span style="color:var(--accent-dk);" data-i18n="about_h2b">Industria</span><br/><span data-i18n="about_h2c">Nacional</span>
+      </h2>
+      <div style="width:3rem; height:3px; background:var(--accent-dk); margin-bottom:2rem;"></div>
+      <div style="font-family:'Public Sans',sans-serif; font-weight:400; font-size:1.02rem; color:#475569; line-height:1.85; display:flex; flex-direction:column; gap:1.2rem;">
+        <p style="margin:0;" data-i18n="about_p1">Somos una empresa familiar con sede en <strong style="color:#1e293b; font-weight:600;">Las Parejas, Santa Fe</strong>. Nos dedicamos a la fabricación de productos plásticos por inyección y rotomoldeo, y transmisiones cardánicas.</p>
+        <p style="margin:0;" data-i18n="about_p2">Con más de 40 años en el mercado, fuimos <strong style="color:#1e293b; font-weight:600;">pioneros en aplicar el plástico a la agroindustria argentina</strong>. Hoy proveemos a industrias frigoríficas, lechera, alimenticia, de acoplados, iluminación, señalética y más.</p>
+      </div>
+      <div style="margin-top:2.5rem; display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div style="border-left:2px solid var(--accent-dk); padding-left:1rem;">
+          <span class="material-symbols-outlined" style="color:var(--accent-dk); margin-bottom:0.25rem; display:block; font-size:1.4rem;">precision_manufacturing</span>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:#1e293b; margin-bottom:0.2rem;" data-i18n="pillar1_title">Matricería Propia</div>
+          <div style="font-size:0.82rem; color:#64748b;" data-i18n="pillar1_desc">Producción de precisión con tecnología avanzada.</div>
+        </div>
+        <div style="border-left:2px solid var(--accent-dk); padding-left:1rem;">
+          <span class="material-symbols-outlined" style="color:var(--accent-dk); margin-bottom:0.25rem; display:block; font-size:1.4rem;">local_shipping</span>
+          <div style="font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:#1e293b; margin-bottom:0.2rem;" data-i18n="pillar2_title">Envíos al País</div>
+          <div style="font-size:0.82rem; color:#64748b;" data-i18n="pillar2_desc">Distribución eficiente a toda la Argentina.</div>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem;">
+        <a href="quienes-somos.html" class="btn-outline-dark" data-i18n="about_btn">Nuestra Historia</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ CTA BAND (amarillo — sin cambios, funciona bien) ═══════════ -->
+<section style="position:relative; background:var(--accent); padding:5.5rem 2.5rem; overflow:hidden;">
+  <div class="dots" style="position:absolute; right:0; top:0; width:40%; height:100%; opacity:0.2;"></div>
+  <div style="max-width:1600px; margin:0 auto; position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:3rem; flex-wrap:wrap;">
+    <div>
+      <h2 style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:clamp(2rem,5vw,4rem); text-transform:uppercase; color:#0f172a; letter-spacing:-0.02em; margin:0 0 0.75rem; line-height:1.05;" data-i18n="cta_h2">¿Tiene un proyecto<br/>en mente?</h2>
+      <p style="font-family:'Public Sans',sans-serif; font-size:1rem; color:#1e3a5f; margin:0; max-width:480px; line-height:1.65;" data-i18n="cta_desc">Nuestro equipo está listo para asesorarlo. Consulte por productos, precios o desarrollos a medida.</p>
+    </div>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; flex-shrink:0;">
+      <a href="tel:+543471470445" style="display:inline-flex; align-items:center; gap:0.6rem; background:#0f172a; color:#fff; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em; padding:1rem 2rem; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background='#0f172a'">
+        <span class="material-symbols-outlined" style="font-size:1.1rem;">phone_in_talk</span>
+        03471 – 470445
+      </a>
+      <a href="contacto.html" style="display:inline-flex; align-items:center; gap:0.6rem; background:transparent; color:#0f172a; border:2px solid #0f172a; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.1em; padding:1rem 2rem; text-decoration:none; transition:background 0.2s, color 0.2s;" data-i18n="cta_btn" onmouseover="this.style.background='#0f172a';this.style.color='#fff'" onmouseout="this.style.background='transparent';this.style.color='#0f172a'">
+        <span class="material-symbols-outlined" style="font-size:1.1rem;">mail</span>
+        <span data-i18n="cta_btn">Enviar Consulta</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACTO RÁPIDO (slate-800) ═══════════ -->
+<section style="background:var(--bg-mid); border-top:1px solid rgba(255,255,255,0.05); padding:4.5rem 2.5rem;">
+  <div style="max-width:1600px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:2rem;">
+
+    <div class="fade-up" style="display:flex; gap:1.2rem; align-items:flex-start;">
+      <div style="width:2.75rem; height:2.75rem; background:rgba(255,209,0,0.08); border:1px solid rgba(255,209,0,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <span class="material-symbols-outlined" style="color:var(--accent); font-size:1.2rem;">location_on</span>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.18em; color:#64748b; margin-bottom:0.35rem;" data-i18n="info_addr_label">Dirección</div>
+        <div style="font-size:0.92rem; color:#e2e8f0; line-height:1.5;">J.M. de Rosas 176<br/><span style="color:#64748b; font-size:0.82rem;" data-i18n="info_addr_city">Las Parejas, Santa Fe</span></div>
+      </div>
+    </div>
+
+    <div class="fade-up delay-1" style="display:flex; gap:1.2rem; align-items:flex-start;">
+      <div style="width:2.75rem; height:2.75rem; background:rgba(255,209,0,0.08); border:1px solid rgba(255,209,0,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <span class="material-symbols-outlined" style="color:var(--accent); font-size:1.2rem;">call</span>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.18em; color:#64748b; margin-bottom:0.35rem;" data-i18n="info_tel_label">Teléfono</div>
+        <a href="tel:+543471470445" style="font-size:0.92rem; color:#e2e8f0; text-decoration:none; display:block; line-height:1.5;">03471 – 470445<br/><span style="color:#64748b; font-size:0.82rem;" data-i18n="info_tel_lines">Líneas 141 / 144</span></a>
+      </div>
+    </div>
+
+    <div class="fade-up delay-2" style="display:flex; gap:1.2rem; align-items:flex-start;">
+      <div style="width:2.75rem; height:2.75rem; background:rgba(255,209,0,0.08); border:1px solid rgba(255,209,0,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <span class="material-symbols-outlined" style="color:var(--accent); font-size:1.2rem;">mail</span>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.18em; color:#64748b; margin-bottom:0.35rem;" data-i18n="info_email_label">Email</div>
+        <a href="mailto:ventas@kadae.com.ar" style="font-size:0.92rem; color:#e2e8f0; text-decoration:none; line-height:1.5; display:block;">ventas@kadae.com.ar<br/><span style="color:#64748b; font-size:0.82rem;" data-i18n="info_email_sub">Consultas y cotizaciones</span></a>
+      </div>
+    </div>
+
+    <div class="fade-up delay-3" style="display:flex; gap:1.2rem; align-items:flex-start;">
+      <div style="width:2.75rem; height:2.75rem; background:rgba(255,209,0,0.08); border:1px solid rgba(255,209,0,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <span class="material-symbols-outlined" style="color:var(--accent); font-size:1.2rem;">schedule</span>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.18em; color:#64748b; margin-bottom:0.35rem;" data-i18n="info_hours_label">Horarios</div>
+        <div style="font-size:0.92rem; color:#e2e8f0; line-height:1.5;"><span data-i18n="info_hours_days">Lun – Vie</span><br/><span style="color:#64748b; font-size:0.82rem;">07:00 – 16:00 hs.</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════ FOOTER (carbón oscuro — no negro puro) ═══════════ -->
+<footer style="background:var(--bg-footer); border-top:3px solid var(--accent);">
+  <div style="max-width:1600px; margin:0 auto; padding:4.5rem 2.5rem;">
+    <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem;">
+
+      <div>
+        <div style="font-family:'Work Sans',sans-serif; font-weight:900; font-size:1.5rem; color:var(--accent); text-transform:uppercase; margin-bottom:1.2rem;">Kadae S.A.</div>
+        <p style="font-family:'Public Sans',sans-serif; font-size:0.88rem; color:#475569; line-height:1.75; max-width:280px; margin:0 0 1.5rem;" data-i18n="footer_desc">Fabricación de productos plásticos por inyección y rotomoldeo, y transmisiones cardánicas. Industria nacional desde Las Parejas, Santa Fe.</p>
+        <a href="https://www.kadae.com.ar/cv" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; border:1px solid rgba(255,209,0,0.3); color:var(--accent); font-family:'Space Grotesk',sans-serif; font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; padding:0.6rem 1rem; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,209,0,0.08)'" onmouseout="this.style.background='transparent'" data-i18n="footer_join">
+          <span class="material-symbols-outlined" style="font-size:0.9rem;">work</span>
+          ¡Sumate al equipo!
+        </a>
+      </div>
+
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; color:var(--accent); margin-bottom:1.5rem;" data-i18n="footer_nav_label">Navegación</div>
+        <div style="display:flex; flex-direction:column; gap:0.8rem;">
+          <a href="index.html"         style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'" data-i18n="nav_inicio">Inicio</a>
+          <a href="quienes-somos.html" style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'" data-i18n="nav_quienes">Quiénes Somos</a>
+          <a href="productos.html"     style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'" data-i18n="nav_productos">Productos</a>
+          <a href="contacto.html"      style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'" data-i18n="nav_contacto">Contacto</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; color:var(--accent); margin-bottom:1.5rem;" data-i18n="footer_prod_label">Productos</div>
+        <div style="display:flex; flex-direction:column; gap:0.8rem;">
+          <a href="productos.html#inyeccion"  style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'" data-i18n="footer_prod1">Inyección Plástica</a>
+          <a href="productos.html#rotomoldeo" style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'" data-i18n="footer_prod2">Rotomoldeo</a>
+          <a href="productos.html#cardanes"   style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'" data-i18n="footer_prod3">Transmisiones Cardánicas</a>
+          <a href="productos.html"            style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#475569'" data-i18n="footer_prod4">Ver Catálogo Completo</a>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:0.65rem; font-weight:700; text-transform:uppercase; letter-spacing:0.2em; color:var(--accent); margin-bottom:1.5rem;" data-i18n="nav_contacto">Contacto</div>
+        <div style="display:flex; flex-direction:column; gap:0.75rem;">
+          <a href="tel:+543471470445" style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s; display:flex; align-items:center; gap:0.4rem;" onmouseover="this.style.color='#FFD100'" onmouseout="this.style.color='#475569'">
+            <span class="material-symbols-outlined" style="font-size:0.9rem;">phone</span>03471 – 470445
+          </a>
+          <a href="mailto:ventas@kadae.com.ar" style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s; display:flex; align-items:center; gap:0.4rem;" onmouseover="this.style.color='#FFD100'" onmouseout="this.style.color='#475569'">
+            <span class="material-symbols-outlined" style="font-size:0.9rem;">mail</span>ventas@kadae.com.ar
+          </a>
+          <a href="https://api.whatsapp.com/send/?phone=%2B5493471527595" target="_blank" style="font-size:0.85rem; color:#475569; text-decoration:none; transition:color 0.2s; display:flex; align-items:center; gap:0.4rem;" onmouseover="this.style.color='#25d366'" onmouseout="this.style.color='#475569'">
+            <span class="material-symbols-outlined" style="font-size:0.9rem;">chat</span>WhatsApp
+          </a>
+          <div style="font-size:0.82rem; color:#374151; margin-top:0.25rem;" data-i18n="info_hours_sched">Lun–Vie, 07:00–16:00 hs.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.05); margin-top:3.5rem; padding-top:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+      <p style="font-family:'Space Grotesk',sans-serif; font-size:0.65rem; color:#374151; text-transform:uppercase; letter-spacing:0.15em; margin:0;" data-i18n="footer_copy">© 2026 Kadae S.A. — Las Parejas, Santa Fe, Argentina. Todos los derechos reservados.</p>
+      <div style="width:2.5rem; height:2px; background:var(--accent); opacity:0.4;"></div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a id="waFab" href="https://api.whatsapp.com/send/?phone=%2B5493471527595&text=Hola.+Me+comunico+a+traves+de+la+pagina+web+Kadae+S.A.+por+la+siguiente+consulta%3A" target="_blank" aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// ════════════════════════════════════════════════
+// TRANSLATIONS
+// ════════════════════════════════════════════════
+const i18n = {
+  es: {
+    nav_inicio:'Inicio', nav_quienes:'Quiénes Somos', nav_productos:'Productos', nav_contacto:'Contacto', nav_cta:'Solicitar Cotización',
+    hero_label:'Industria Nacional — Las Parejas, Santa Fe',
+    hero_h1_line2:'PLÁSTICOS', hero_h1_line3:'Y CARDANES.',
+    hero_desc:'Más de ', hero_years:'años', hero_desc2:'fabricando productos plásticos por inyección y rotomoldeo, y transmisiones cardánicas de calidad nacional.',
+    hero_cta1:'Ver Productos', hero_cta2:'Solicitar Cotización',
+    stat1:'Años en el Mercado', stat2:'Productos en Catálogo', stat3:'Envíos a todo el País',
+    prod_label:'Catálogo Técnico', prod_h2a:'Nuestros', prod_h2b:'Productos', prod_see_all:'Ver catálogo completo →',
+    card1_label:'01 — Plásticos', card1_title:'Inyección', card1_desc:'Componentes termoplásticos de precisión para aplicaciones agrícolas e industriales.',
+    card2_label:'02 — Transmisiones', card2_title:'Cardanes', card2_desc:'Sistemas de transmisión de potencia diseñados para durabilidad extrema en condiciones de trabajo exigentes.',
+    card3_label:'03 — Plásticos', card3_title:'Rotomoldeo', card3_desc:'Piezas de gran volumen y formas complejas con espesores de pared uniformes para diversas industrias.',
+    card_cta:'Ver productos', card_see_catalog:'Ver Catálogo',
+    industry_label:'Sectores que atendemos', industry_h2:'Industrias que servimos',
+    sec1:'Agroindustria', sec2:'Frigorífica', sec3:'Lechera', sec4:'Alimenticia', sec5:'Acoplados', sec6:'Iluminación', sec7:'Señalética', sec8:'Automotriz', sec9:'Agrícola', sec10:'Construcción',
+    badge_years:'Años\nliderando',
+    about_label:'Sobre Kadae S.A.', about_h2a:'Líderes en', about_h2b:'Industria', about_h2c:'Nacional',
+    about_p1:'Somos una empresa familiar con sede en <strong style="color:#1e293b;font-weight:600;">Las Parejas, Santa Fe</strong>. Nos dedicamos a la fabricación de productos plásticos por inyección y rotomoldeo, y transmisiones cardánicas.',
+    about_p2:'Con más de 40 años en el mercado, fuimos <strong style="color:#1e293b;font-weight:600;">pioneros en aplicar el plástico a la agroindustria argentina</strong>. Hoy proveemos a industrias frigoríficas, lechera, alimenticia, de acoplados, iluminación, señalética y más.',
+    pillar1_title:'Matricería Propia', pillar1_desc:'Producción de precisión con tecnología avanzada.',
+    pillar2_title:'Envíos al País', pillar2_desc:'Distribución eficiente a toda la Argentina.',
+    about_btn:'Nuestra Historia',
+    cta_h2:'¿Tiene un proyecto<br/>en mente?', cta_desc:'Nuestro equipo está listo para asesorarlo. Consulte por productos, precios o desarrollos a medida.', cta_btn:'Enviar Consulta',
+    info_addr_label:'Dirección', info_addr_city:'Las Parejas, Santa Fe', info_tel_label:'Teléfono', info_tel_lines:'Líneas 141 / 144',
+    info_email_label:'Email', info_email_sub:'Consultas y cotizaciones', info_hours_label:'Horarios', info_hours_days:'Lun – Vie', info_hours_sched:'Lun–Vie, 07:00–16:00 hs.',
+    footer_desc:'Fabricación de productos plásticos por inyección y rotomoldeo, y transmisiones cardánicas. Industria nacional desde Las Parejas, Santa Fe.',
+    footer_join:'¡Sumate al equipo!', footer_nav_label:'Navegación', footer_prod_label:'Productos',
+    footer_prod1:'Inyección Plástica', footer_prod2:'Rotomoldeo', footer_prod3:'Transmisiones Cardánicas', footer_prod4:'Ver Catálogo Completo',
+    footer_copy:'© 2026 Kadae S.A. — Las Parejas, Santa Fe, Argentina. Todos los derechos reservados.',
+  },
+  en: {
+    nav_inicio:'Home', nav_quienes:'About Us', nav_productos:'Products', nav_contacto:'Contact', nav_cta:'Request Quote',
+    hero_label:'National Industry — Las Parejas, Santa Fe, Argentina',
+    hero_h1_line2:'PLASTICS', hero_h1_line3:'& DRIVESHAFTS.',
+    hero_desc:'Over ', hero_years:'years', hero_desc2:'manufacturing injection & rotomoulding plastic products and quality driveshaft transmissions.',
+    hero_cta1:'View Products', hero_cta2:'Request Quote',
+    stat1:'Years in Business', stat2:'Products in Catalog', stat3:'Nationwide Shipping',
+    prod_label:'Technical Catalog', prod_h2a:'Our', prod_h2b:'Products', prod_see_all:'View full catalog →',
+    card1_label:'01 — Plastics', card1_title:'Injection', card1_desc:'Precision thermoplastic components for agricultural and industrial applications.',
+    card2_label:'02 — Transmissions', card2_title:'Driveshafts', card2_desc:'Power transmission systems designed for extreme durability under demanding working conditions.',
+    card3_label:'03 — Plastics', card3_title:'Rotomoulding', card3_desc:'Large-volume parts with complex shapes and uniform wall thickness for various industries.',
+    card_cta:'View products', card_see_catalog:'View Catalog',
+    industry_label:'Sectors we serve', industry_h2:'Industries We Serve',
+    sec1:'Agro-Industry', sec2:'Refrigeration', sec3:'Dairy', sec4:'Food Processing', sec5:'Trailers', sec6:'Lighting', sec7:'Signage', sec8:'Automotive', sec9:'Agriculture', sec10:'Construction',
+    badge_years:'Years\nleading',
+    about_label:'About Kadae S.A.', about_h2a:'Leaders in', about_h2b:'National', about_h2c:'Industry',
+    about_p1:'We are a family business based in <strong style="color:#1e293b;font-weight:600;">Las Parejas, Santa Fe, Argentina</strong>. We specialize in manufacturing injection and rotomoulding plastic products and driveshaft transmissions.',
+    about_p2:'With over 40 years in the market, we were <strong style="color:#1e293b;font-weight:600;">pioneers in applying plastics to Argentine agro-industry</strong>. Today we supply refrigeration, dairy, food, trailer, lighting, signage industries and more.',
+    pillar1_title:'In-House Tooling', pillar1_desc:'Precision production with advanced technology.',
+    pillar2_title:'Nationwide Delivery', pillar2_desc:'Efficient distribution across all of Argentina.',
+    about_btn:'Our Story',
+    cta_h2:'Have a project<br/>in mind?', cta_desc:'Our team is ready to advise you. Ask us about products, pricing or custom developments.', cta_btn:'Send Inquiry',
+    info_addr_label:'Address', info_addr_city:'Las Parejas, Santa Fe', info_tel_label:'Phone', info_tel_lines:'Lines 141 / 144',
+    info_email_label:'Email', info_email_sub:'Inquiries & quotes', info_hours_label:'Hours', info_hours_days:'Mon – Fri', info_hours_sched:'Mon–Fri, 07:00–16:00 hs.',
+    footer_desc:'Manufacturing injection & rotomoulding plastic products and driveshaft transmissions. Argentine national industry from Las Parejas, Santa Fe.',
+    footer_join:'Join our team!', footer_nav_label:'Navigation', footer_prod_label:'Products',
+    footer_prod1:'Plastic Injection', footer_prod2:'Rotomoulding', footer_prod3:'Driveshaft Transmissions', footer_prod4:'View Full Catalog',
+    footer_copy:'© 2026 Kadae S.A. — Las Parejas, Santa Fe, Argentina. All rights reserved.',
+  },
+  pt: {
+    nav_inicio:'Início', nav_quienes:'Quem Somos', nav_productos:'Produtos', nav_contacto:'Contato', nav_cta:'Solicitar Cotação',
+    hero_label:'Indústria Nacional — Las Parejas, Santa Fe, Argentina',
+    hero_h1_line2:'PLÁSTICOS', hero_h1_line3:'E CARDANS.',
+    hero_desc:'Mais de ', hero_years:'anos', hero_desc2:'fabricando produtos plásticos por injeção e rotomoldagem, e transmissões de cardã de qualidade nacional.',
+    hero_cta1:'Ver Produtos', hero_cta2:'Solicitar Cotação',
+    stat1:'Anos no Mercado', stat2:'Produtos no Catálogo', stat3:'Envios para todo o País',
+    prod_label:'Catálogo Técnico', prod_h2a:'Nossos', prod_h2b:'Produtos', prod_see_all:'Ver catálogo completo →',
+    card1_label:'01 — Plásticos', card1_title:'Injeção', card1_desc:'Componentes termoplásticos de precisão para aplicações agrícolas e industriais.',
+    card2_label:'02 — Transmissões', card2_title:'Cardans', card2_desc:'Sistemas de transmissão de potência projetados para durabilidade extrema em condições exigentes de trabalho.',
+    card3_label:'03 — Plásticos', card3_title:'Rotomoldagem', card3_desc:'Peças de grande volume e formas complexas com espessura de parede uniforme para diversas indústrias.',
+    card_cta:'Ver produtos', card_see_catalog:'Ver Catálogo',
+    industry_label:'Setores que atendemos', industry_h2:'Indústrias que Servimos',
+    sec1:'Agroindústria', sec2:'Frigorífica', sec3:'Laticínios', sec4:'Alimentícia', sec5:'Reboques', sec6:'Iluminação', sec7:'Sinalização', sec8:'Automotiva', sec9:'Agrícola', sec10:'Construção',
+    badge_years:'Anos\nliderando',
+    about_label:'Sobre a Kadae S.A.', about_h2a:'Líderes na', about_h2b:'Indústria', about_h2c:'Nacional',
+    about_p1:'Somos uma empresa familiar sediada em <strong style="color:#1e293b;font-weight:600;">Las Parejas, Santa Fe, Argentina</strong>. Fabricamos produtos plásticos por injeção e rotomoldagem, e transmissões de cardã.',
+    about_p2:'Com mais de 40 anos no mercado, fomos <strong style="color:#1e293b;font-weight:600;">pioneiros na aplicação do plástico na agroindústria argentina</strong>. Hoje fornecemos às indústrias frigorífica, laticinista, alimentícia, de reboques, iluminação, sinalização e outras.',
+    pillar1_title:'Ferramentaria Própria', pillar1_desc:'Produção de precisão com tecnologia avançada.',
+    pillar2_title:'Envios Nacionais', pillar2_desc:'Distribuição eficiente em toda a Argentina.',
+    about_btn:'Nossa História',
+    cta_h2:'Tem um projeto<br/>em mente?', cta_desc:'Nossa equipe está pronta para assessorá-lo. Consulte sobre produtos, preços ou desenvolvimentos sob medida.', cta_btn:'Enviar Consulta',
+    info_addr_label:'Endereço', info_addr_city:'Las Parejas, Santa Fe', info_tel_label:'Telefone', info_tel_lines:'Linhas 141 / 144',
+    info_email_label:'E-mail', info_email_sub:'Consultas e cotações', info_hours_label:'Horário', info_hours_days:'Seg – Sex', info_hours_sched:'Seg–Sex, 07:00–16:00 hs.',
+    footer_desc:'Fabricação de produtos plásticos por injeção e rotomoldagem, e transmissões de cardã. Indústria nacional argentina de Las Parejas, Santa Fe.',
+    footer_join:'Junte-se à equipa!', footer_nav_label:'Navegação', footer_prod_label:'Produtos',
+    footer_prod1:'Injeção Plástica', footer_prod2:'Rotomoldagem', footer_prod3:'Transmissões de Cardã', footer_prod4:'Ver Catálogo Completo',
+    footer_copy:'© 2026 Kadae S.A. — Las Parejas, Santa Fe, Argentina. Todos os direitos reservados.',
+  }
+};
+
+let currentLang = localStorage.getItem('kadae_lang') || 'es';
+
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('kadae_lang', lang);
+  const t = i18n[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  // Update active state on all lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  document.documentElement.lang = lang;
+}
+
+// Bind lang buttons
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+});
+
+// Init
+applyLang(currentLang);
+
+// ── Navbar scroll ──
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ── Mobile menu ──
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileMenu   = document.getElementById('mobileMenu');
+mobileToggle.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  mobileToggle.classList.toggle('open', open);
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    mobileToggle.classList.remove('open');
+  });
+});
+
+// ── WhatsApp FAB ──
+const waFab = document.getElementById('waFab');
+window.addEventListener('scroll', () => {
+  waFab.classList.toggle('show', window.scrollY > 300);
+}, { passive: true });
+
+// ── Scroll animations ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { rootMargin: '0px 0px -60px 0px', threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ── Responsive bento grid ──
+(function() {
+  const mq = window.matchMedia('(max-width: 767px)');
+  const bento = document.querySelector('[style*="grid-template-columns:1fr 1fr"]');
+  function apply(m) {
+    if (!bento) return;
+    if (m.matches) {
+      bento.style.gridTemplateColumns = '1fr';
+      bento.style.gridTemplateRows = 'auto auto auto';
+      if (bento.lastElementChild) bento.lastElementChild.style.gridColumn = '1';
+    } else {
+      bento.style.gridTemplateColumns = '1fr 1fr';
+      bento.style.gridTemplateRows = '480px 320px';
+      if (bento.lastElementChild) bento.lastElementChild.style.gridColumn = '1/3';
+    }
+  }
+  apply(mq); mq.addEventListener('change', apply);
+})();
+
+// ── Responsive grids ──
+[
+  ['(max-width: 900px)', '[style*="grid-template-columns:repeat(4,1fr)"]', 'repeat(2,1fr)', 'repeat(4,1fr)'],
+  ['(max-width: 900px)', '[style*="grid-template-columns:2fr 1fr 1fr 1fr"]', '1fr 1fr', '2fr 1fr 1fr 1fr'],
+  ['(max-width: 600px)', '[style*="grid-template-columns:repeat(3,1fr)"]', '1fr', 'repeat(3,1fr)'],
+].forEach(([mqs, sel, mob, desk]) => {
+  const mq = window.matchMedia(mqs);
+  const el = document.querySelector(sel);
+  const apply = m => { if (el) el.style.gridTemplateColumns = m.matches ? mob : desk; };
+  apply(mq); mq.addEventListener('change', apply);
+});
+
+// About grid responsive
+(function() {
+  const mq = window.matchMedia('(max-width: 900px)');
+  const about = document.querySelector('[style*="gap:6rem"][style*="grid-template-columns:1fr 1fr"]');
+  const apply = m => {
+    if (!about) return;
+    about.style.gridTemplateColumns = m.matches ? '1fr' : '1fr 1fr';
+    about.style.gap = m.matches ? '3rem' : '6rem';
+  };
+  apply(mq); mq.addEventListener('change', apply);
+})();
+</script>
+</body>
+</html>
