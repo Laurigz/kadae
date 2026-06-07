@@ -4,7 +4,9 @@
   "description": "Website for Kadae S.A.",
   "main": "index.js",
   "scripts": {
-    "dev": "vite website"
+    "dev": "vite website",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^5.0.0"
